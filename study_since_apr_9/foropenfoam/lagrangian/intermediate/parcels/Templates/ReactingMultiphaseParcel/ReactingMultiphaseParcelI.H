@@ -63,7 +63,7 @@ constantProperties
     hRetentionCoeff_(this->dict_, "hRetentionCoeff")
 {}
 
-
+// 279 of ReactingMultiphaseParcel.C
 template<class ParcelType>
 inline Foam::ReactingMultiphaseParcel<ParcelType>::ReactingMultiphaseParcel
 (
@@ -75,10 +75,10 @@ inline Foam::ReactingMultiphaseParcel<ParcelType>::ReactingMultiphaseParcel
 )
 :
     ParcelType(mesh, coordinates, celli, tetFacei, tetPti),
-    YGas_(0),
-    YLiquid_(0),
-    YSolid_(0),
-    canCombust_(0)
+    YGas_(0),// Mass fractions of gases []
+    YLiquid_(0), //- Mass fractions of liquids []
+    YSolid_(0), //- Mass fractions of solids []
+    canCombust_(0) // 202 of ReactingMultiphaseParcel.C
 {}
 
 
