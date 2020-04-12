@@ -11,7 +11,6 @@ public:
         static const label LIQ;
         static const label SLD;
 };
-typedef typename ParcelType::trackingData trackingData;
 
 //const label ReactingMultiphaseParcel<ParcelType>::GAS(1);
 //const label ReactingMultiphaseParcel::GAS(0);
