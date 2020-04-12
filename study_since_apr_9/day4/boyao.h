@@ -4,7 +4,13 @@
 class boyao
 {
 public:
-  boyao(){};
+  int regval; const int constval;
+  //constructor
+  boyao(int a, int b);
+
+  // destructor
+  ~boyao();
+
   void nonconst();
   void constfunc() const;
 };
