@@ -40,5 +40,6 @@ int main(int argc, char const *argv[]) {
   Jiechen.printmyfriendname();
   jiechen* baba = &Jiechen;
   baba->printmyfriendname();
+  (*baba).printmyfriendname();
   return 0;
 }
