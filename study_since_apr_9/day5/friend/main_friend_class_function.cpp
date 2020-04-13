@@ -38,5 +38,7 @@ int main(int argc, char const *argv[]) {
   boyao Boyao;
   Boyao.tellIamfriend(Jiechen);
   Jiechen.printmyfriendname();
+  jiechen* baba = &Jiechen;
+  baba->printmyfriendname();
   return 0;
 }
