@@ -13,7 +13,7 @@ public:
   {
     attackPower=a;
   };
-  virtual void attack()=0;// This is a pure virtual function;
+  virtual void attack()=0;// This is a pure virtual function; virtual void attack(){}; is also fine
 };
 
 class Ninja:public Enemy
