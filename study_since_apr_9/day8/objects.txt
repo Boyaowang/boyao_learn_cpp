@@ -1,0 +1,9 @@
+chair 0
+table 0
+ninja -34
+apple 100
+shoe 0
+monster -999
+soda 20
+cola 999
+bitch -9999
