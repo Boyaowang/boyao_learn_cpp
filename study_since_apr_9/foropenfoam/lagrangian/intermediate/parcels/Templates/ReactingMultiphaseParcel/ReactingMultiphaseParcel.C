@@ -236,7 +236,7 @@ void Foam::ReactingMultiphaseParcel<ParcelType>::calc
     scalarField Cs(composition.carrier().species().size(), 0.0);
 
     // Calc mass and enthalpy transfer due to phase change
-    this->calcPhaseChange
+    this->calcPhaseChange //parcels/Templates/ReactingParcel/ReactingParcel.C:38
     (
         cloud,
         td,
@@ -374,7 +374,7 @@ void Foam::ReactingMultiphaseParcel<ParcelType>::calc
             */
 
             cloud.UTrans()[this->cell()] += dm*U0;
-
+// lagrangian/coalCombustion/coalCloudList/coalCloudListI.H
             cloud.hsTrans()[this->cell()] +=
                 dm*HsEff(cloud, td, pc, T0, idG, idL, idS);
 
@@ -421,7 +421,7 @@ void Foam::ReactingMultiphaseParcel<ParcelType>::calc
     // Calculate new particle velocity
     this->U_ =
         this->calcVelocity(cloud, td, dt, Res, mus, mass1, Su, dUTrans, Spu);
-
+// parcels/Templates/KinematicParcel/KinematicParcel.C : 157
 
     // 4. Accumulate carrier phase source terms
     // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -560,7 +560,7 @@ void Foam::ReactingMultiphaseParcel<ParcelType>::calcDevolatilisation
 
     scalar dMassTot = sum(dMassDV);
 
-    cloud.devolatilisation().addToDevolatilisationMass
+    cloud.devolatilisation().addToDevolatilisationMass//submodels/.../DevolatilisationModel.C 75
     (
         this->nParticle_*dMassTot
     );
