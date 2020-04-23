@@ -135,7 +135,7 @@ private:
         label celli_;
 
         //- Index of the face that owns the decomposed tet that the
-        //  particle is in
+        //  particle is in (tet Tetrahedral)
         label tetFacei_;
 
         //- Index of the point on the face that defines the decomposed
