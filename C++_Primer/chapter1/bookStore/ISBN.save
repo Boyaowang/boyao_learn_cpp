@@ -1,0 +1,6 @@
+0-201-78345-X 20.00 
+0-201-78345-X 20.10
+  Sales_item operator+=(const Sales_item& obj){
+    this->revenue += obj.price;
+    return *this;
+  }
