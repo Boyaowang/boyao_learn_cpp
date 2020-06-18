@@ -1,4 +1,5 @@
 #include <iostream>
+#include <vector>
 using namespace std;
 
 typedef int Iage;
@@ -6,7 +7,6 @@ int agePar =12;
 class people {
 private:
   int age =10;
-
 
   using Sname =string;
 public:
@@ -20,7 +20,7 @@ public:
   Sname yourName(){
     return name;
   }
-
+  
   int results()
   {
     return age* ::agePar;
