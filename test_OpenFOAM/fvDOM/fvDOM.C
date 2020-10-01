@@ -280,7 +280,8 @@ Foam::radiationModels::fvDOM::fvDOM(const volScalarField& T)
       : coeffs_.lookupOrDefault<scalar>("tolerance", 0)
     ),
     maxIter_(coeffs_.lookupOrDefault<label>("maxIter", 50)),
-    omegaMax_(0)
+    omegaMax_(0),
+    sigmaEff_(scatter_->sigmaEff())
 {
     initialise();
 }
@@ -372,7 +373,8 @@ Foam::radiationModels::fvDOM::fvDOM
       : coeffs_.lookupOrDefault<scalar>("tolerance", 0)
     ),
     maxIter_(coeffs_.lookupOrDefault<label>("maxIter", 50)),
-    omegaMax_(0)
+    omegaMax_(0),
+    sigmaEff_(scatter_->sigmaEff())
 {
     initialise();
 }

@@ -115,5 +115,10 @@ inline Foam::scalar Foam::radiationModels::fvDOM::omegaMax() const
     return omegaMax_;
 }
 
+inline const Foam::volScalarField& Foam::radiationModels::fvDOM::sigmaEff() const
+{
+    return sigmaEff_;
+}
+
 
 // ************************************************************************* //

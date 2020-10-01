@@ -133,6 +133,8 @@ class fvDOM
         //- Maximum omega weight
         scalar omegaMax_;
 
+        //- scatter Effect
+        volScalarField sigmaEff_;
 
     // Private Member Functions
 
@@ -242,6 +244,8 @@ public:
             //- Return omegaMax
             inline scalar omegaMax() const;
 
+            //- Return sigmaEff
+            inline const volScalarField& sigmaEff() const;
 
     // Member Operators
 
