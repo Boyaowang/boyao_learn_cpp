@@ -11,10 +11,17 @@ print_something("axin",axinxin);
 print_something("gouzi",gouzi);
 print_something("zixin",zixin);
 
+void numbers(int a = 10) {
+  std::cout << a << '\n';
+}
+
 int main(int argc, char const *argv[]) {
   //axin("gouzi");
   nameaxinxin();
   namegouzi();
   namezixin();
+  std::cout << __TIME__ << '\n';
+  numbers();
+
   return 0;
 }
