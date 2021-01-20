@@ -22,12 +22,18 @@ License
     along with OpenFOAM.  If not, see <http://www.gnu.org/licenses/>.
 
 \*---------------------------------------------------------------------------*/
-
 #include "boyaoSubClass.H"
+#include "addToRunTimeSelectionTable.H"
+
+namespace Foam
+{
+    defineTypeNameAndDebug(boyaoSubClass, 0);
+    addToRunTimeSelectionTable(boyaoClass2, boyaoSubClass, dictionary);
+}
 
 // * * * * * * * * * * * * * * Static Data Members * * * * * * * * * * * * * //
 
-const dataType Foam::boyaoSubClass::staticData();
+//const dataType Foam::boyaoSubClass::staticData();
 
 
 // * * * * * * * * * * * * * Static Member Functions * * * * * * * * * * * * //
@@ -43,23 +49,30 @@ const dataType Foam::boyaoSubClass::staticData();
 
 Foam::boyaoSubClass::boyaoSubClass()
 :
-    baseClassName(),
+    boyaoClass2(),
+    data_()
+{}
+
+  //- Construct from components
+Foam::boyaoSubClass::boyaoSubClass(const word& name)
+:
+    boyaoClass2(),
     data_()
 {}
 
 
-Foam::boyaoSubClass::boyaoSubClass(const dataType& data)
-:
-    baseClassName(),
-    data_(data)
-{}
-
-
-Foam::boyaoSubClass::boyaoSubClass(const boyaoSubClass&)
-:
-    baseClassName(),
-    data_()
-{}
+// Foam::boyaoSubClass::boyaoSubClass(const dataType& data)
+// :
+//     baseClassName(),
+//     data_(data)
+// {}
+//
+//
+// Foam::boyaoSubClass::boyaoSubClass(const boyaoSubClass&)
+// :
+//     baseClassName(),
+//     data_()
+// {}
 
 
 // * * * * * * * * * * * * * * * * Selectors * * * * * * * * * * * * * * * * //

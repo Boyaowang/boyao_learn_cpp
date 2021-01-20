@@ -50,7 +50,8 @@
 
 # 8 "<command-line>" 2
 # 1 "Make/options"
-EXE_INC = -I$(OBJECTS_DIR)
+EXE_INC = -I$(OBJECTS_DIR) -I../boyaoClass2/lnInclude
 
 
-LIB_LIBS = $(FOAM_LIBBIN)/libOSspecific.o -L$(FOAM_LIBBIN)/dummy -lPstream -lz
+
+LIB_LIBS = -L$(FOAM_USER_LIBBIN) $(FOAM_LIBBIN)/libOSspecific.o -L$(FOAM_LIBBIN)/dummy -lPstream -lz -lboyaoClassFunctionObject2

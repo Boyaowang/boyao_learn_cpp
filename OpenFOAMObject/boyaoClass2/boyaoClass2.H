@@ -32,8 +32,8 @@ SourceFiles
     boyaoClass2IO.C
 
 \*---------------------------------------------------------------------------*/
-#ifndef _Template_H
-#define _Template_H
+#ifndef _boyaoClass2_H
+#define _boyaoClass2_H
 
 #include "dictionary.H"
 #include "typeInfo.H"
@@ -82,8 +82,10 @@ declareRunTimeSelectionTable
     autoPtr,
     boyaoClass2,
     dictionary,
-    (const word& name, const Time& runTime, const dictionary& dict),
-    (name, runTime, dict)
+    //(const word& name, const Time& runTime, const dictionary& dict),
+    (const word& name),
+    //(name, runTime, dict)
+    (name)
 );
 
 

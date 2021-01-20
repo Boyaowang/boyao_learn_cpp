@@ -33,10 +33,10 @@ SourceFiles
 
 \*---------------------------------------------------------------------------*/
 
-#ifndef _Template_H
-#define _Template_H
+#ifndef _boyaoSubClass_H
+#define _boyaoSubClass_H
 
-#include ".H"
+#include "boyaoClass2.H"
 
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 
@@ -59,12 +59,12 @@ Ostream& operator<<(Ostream&, const boyaoSubClass&);
 
 class boyaoSubClass
 :
-    public baseClassName
+    public boyaoClass2
 {
     // Private Data
 
         //- Description of data_
-        dataType data_;
+        label data_;
 
 
     // Private Member Functions
@@ -75,7 +75,10 @@ public:
     // Static Data Members
 
         //- Static data staticData
-        static const dataType staticData;
+        static const label staticData;
+
+        //- Runtime type information
+        TypeName("boyaoSubClass");
 
 
     // Constructors
@@ -84,7 +87,10 @@ public:
         boyaoSubClass();
 
         //- Construct from components
-        boyaoSubClass(const dataType& data);
+        boyaoSubClass(const label& data);
+
+        //- Construct from components
+        boyaoSubClass(const word& name);
 
         //- Construct from Istream
         boyaoSubClass(Istream&);
@@ -93,7 +99,7 @@ public:
         boyaoSubClass(const boyaoSubClass&);
 
         //- Disallow default bitwise copy construction
-        boyaoSubClass(const boyaoSubClass&) = delete;
+//        boyaoSubClass(const boyaoSubClass&) = delete;
 
 
     // Selectors
@@ -103,7 +109,7 @@ public:
 
 
     //- Destructor
-    ~boyaoSubClass();
+    virtual ~boyaoSubClass();
 
 
     // Member Functions
@@ -122,7 +128,7 @@ public:
         void operator=(const boyaoSubClass&);
 
         //- Disallow default bitwise assignment
-        void operator=(const boyaoSubClass&) = delete;
+//        void operator=(const boyaoSubClass&) = delete;
 
 
     // Friend Functions
