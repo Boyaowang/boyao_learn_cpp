@@ -1,0 +1,3 @@
+boyaoClass.C
+
+LIB = $(FOAM_USER_LIBBIN)/libboyaoClassFunctionObject

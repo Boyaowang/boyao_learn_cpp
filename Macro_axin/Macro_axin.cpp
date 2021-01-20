@@ -23,5 +23,7 @@ int main(int argc, char const *argv[]) {
   std::cout << __TIME__ << '\n';
   numbers();
 
+  std::cout << "name""name" << '\n';
+
   return 0;
 }
