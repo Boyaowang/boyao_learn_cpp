@@ -71,3 +71,4 @@
 // const dictionary somePropertiesDict = someProperties.subDict("boyaoClass1");
 //
 //     boyaoClass boyao("boyaow", runTime, somePropertiesDict);
+boyaoSubClass boyaoSub("boyaoSub");

@@ -21,53 +21,38 @@ License
     You should have received a copy of the GNU General Public License
     along with OpenFOAM.  If not, see <http://www.gnu.org/licenses/>.
 
-Application
-    boyaoStudyFoam
-
-Description
-
 \*---------------------------------------------------------------------------*/
 
-#include "fvCFD.H"
-#include "boyaoClass.H"
-#include "boyaoSubClass.H"
-using namespace Foam::functionObjects;
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+// * * * * * * * * * * * * * Private Member Functions  * * * * * * * * * * * //
+
+
+// * * * * * * * * * * * * * * * * Constructors  * * * * * * * * * * * * * * //
+
+
+// * * * * * * * * * * * * * * * * Destructor  * * * * * * * * * * * * * * * //
+
+
+// * * * * * * * * * * * * * * * Member Functions  * * * * * * * * * * * * * //
+
+
+// * * * * * * * * * * * * * * * Member Operators  * * * * * * * * * * * * * //
+
+
+// * * * * * * * * * * * * * * * Friend Functions  * * * * * * * * * * * * * //
+
+
+// * * * * * * * * * * * * * * * Friend Operators  * * * * * * * * * * * * * //
+
+
+// * * * * * * * * * * * * * * IOstream Operators  * * * * * * * * * * * * * //
+
+
+// * * * * * * * * * * * * * * * Ostream Operator  * * * * * * * * * * * * * //
 
 
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
-// Main program:
-
-int main(int argc, char *argv[])
-{
-    #include "setRootCase.H"
-    #include "createTime.H"
-    #include "createMesh.H"
-    #include "createFields.H"
-
-    // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
-
-
-    for (auto it = functionObject::dictionaryConstructorTablePtr_->begin() ;
-              it != functionObject::dictionaryConstructorTablePtr_->end(); it++) {
-      Info << it.key() << nl;
-    }
-    //
-    // Info << *functionObject::dictionaryConstructorTablePtr_ << nl;
-    // Info<< "\nEnd\n" << endl;
-    // return 0;
-    Info << *functionObject::dictionaryConstructorTablePtr_ << nl;
-     Info << *boyaoClass2::dictionaryConstructorTablePtr_ << nl;
-    while (runTime.run())
-    {
-        runTime.write();
-        runTime++;
-
-    }
-
-    Info<< "End\n" << endl;
-
-    return 0;
-}
 
 
 // ************************************************************************* //

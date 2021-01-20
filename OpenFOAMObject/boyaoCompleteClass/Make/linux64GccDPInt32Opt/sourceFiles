@@ -1,0 +1,3 @@
+SOURCE = \
+boyaoSubClass/boyaoSubClass.C \
+boyaoClass2.C 

@@ -1,0 +1,4 @@
+boyaoSubClass/boyaoSubClass.C
+boyaoClass2.C
+
+LIB = $(FOAM_USER_LIBBIN)/libboyaoCompleteClass
