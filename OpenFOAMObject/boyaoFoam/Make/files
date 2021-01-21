@@ -1,0 +1,3 @@
+boyaoStudyFoam.C
+
+EXE = $(FOAM_APPBIN)/boyaoStudyFoam

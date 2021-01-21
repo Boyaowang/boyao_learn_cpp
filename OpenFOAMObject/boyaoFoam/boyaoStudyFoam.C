@@ -29,9 +29,8 @@ Description
 \*---------------------------------------------------------------------------*/
 
 #include "fvCFD.H"
-//#include "boyaoClass.H"
-#include "boyaoSubClass.H"
-//using namespace Foam::functionObjects;
+#include "boyaoClass.H"
+using namespace Foam::functionObjects;
 
 
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
@@ -47,28 +46,21 @@ int main(int argc, char *argv[])
     // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 
 
-    // for (auto it = functionObject::dictionaryConstructorTablePtr_->begin() ;
-    //           it != functionObject::dictionaryConstructorTablePtr_->end(); it++) {
-    //   Info << it.key() << nl;
-    // }
+    for (auto it = functionObject::dictionaryConstructorTablePtr_->begin() ;
+              it != functionObject::dictionaryConstructorTablePtr_->end(); it++) {
+      Info << it.key() << nl;
+    }
     //
     // Info << *functionObject::dictionaryConstructorTablePtr_ << nl;
     // Info<< "\nEnd\n" << endl;
     // return 0;
-    //Info << *functionObject::dictionaryConstructorTablePtr_ << nl;
-    Info << *boyaoClass2::dictionaryConstructorTablePtr_ << nl;
+
     while (runTime.run())
     {
         runTime.write();
         runTime++;
 
     }
-
-    boyaoFirstSelector->printHelloWorld();
-
-    Info<< "End\n" << endl;
-
-    return 0;
 }
 
 

@@ -1,8 +1,12 @@
 EXE_INC = \
     -I$(OBJECTS_DIR) \
-    -I boyaoSubClassls
+    -I boyaoSubClassls \
+    -I$(LIB_SRC)/finiteVolume/lnInclude \
+    -I$(LIB_SRC)/meshTools/lnInclude
 
 LIB_LIBS = \
     $(FOAM_LIBBIN)/libOSspecific.o \
     -L$(FOAM_LIBBIN)/dummy -lPstream \
+    -lmeshTools \
+    -lfiniteVolume \
     -lz

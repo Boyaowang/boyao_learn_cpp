@@ -50,8 +50,10 @@
 
 # 8 "<command-line>" 2
 # 1 "Make/options"
-EXE_INC = -I$(OBJECTS_DIR) -I boyaoSubClassls
+EXE_INC = -I$(OBJECTS_DIR) -I boyaoSubClassls -I$(LIB_SRC)/finiteVolume/lnInclude -I$(LIB_SRC)/meshTools/lnInclude
 
 
 
-LIB_LIBS = $(FOAM_LIBBIN)/libOSspecific.o -L$(FOAM_LIBBIN)/dummy -lPstream -lz
+
+
+LIB_LIBS = $(FOAM_LIBBIN)/libOSspecific.o -L$(FOAM_LIBBIN)/dummy -lPstream -lmeshTools -lfiniteVolume -lz

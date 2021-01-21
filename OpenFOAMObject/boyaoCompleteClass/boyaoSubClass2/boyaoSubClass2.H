@@ -22,46 +22,45 @@ License
     along with OpenFOAM.  If not, see <http://www.gnu.org/licenses/>.
 
 Class
-    Foam::boyaoClass2
+    Foam::boyaoSubClass2
 
 Description
 
 SourceFiles
-    boyaoClass2I.H
-    boyaoClass2.C
-    boyaoClass2IO.C
+    boyaoSubClass2I.H
+    boyaoSubClass2.C
+    boyaoSubClass2IO.C
 
 \*---------------------------------------------------------------------------*/
-#ifndef _boyaoClass2_H
-#define _boyaoClass2_H
 
-#include "Time.H"
-#include "fvMesh.H"
-#include "dictionary.H"
-#include "typeInfo.H"
-#include "autoPtr.H"
-#include "Switch.H"
-#include "runTimeSelectionTables.H"
+#ifndef _boyaoSubClass2_H
+#define _boyaoSubClass2_H
+
+#include "boyaoClass2.H"
+#include "IOobject.H"
 
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 
 namespace Foam
 {
+
 // Forward declaration of classes
 class Istream;
 class Ostream;
 
 // Forward declaration of friend functions and operators
-class boyaoClass2;
-Istream& operator>>(Istream&, boyaoClass2&);
-Ostream& operator<<(Ostream&, const boyaoClass2&);
+class boyaoSubClass2;
+Istream& operator>>(Istream&, boyaoSubClass2&);
+Ostream& operator<<(Ostream&, const boyaoSubClass2&);
 
 
 /*---------------------------------------------------------------------------*\
-                         Class boyaoClass2 Declaration
+                         Class boyaoSubClass2 Declaration
 \*---------------------------------------------------------------------------*/
 
-class boyaoClass2
+class boyaoSubClass2
+:
+    public boyaoClass2
 {
     // Private Data
 
@@ -74,61 +73,54 @@ class boyaoClass2
 
 public:
 
-  //- Runtime type information
-TypeName("boyaoClass2");
-
-//- Declare runtime constructor selection table
-declareRunTimeSelectionTable
-(
-    autoPtr,
-    boyaoClass2,
-    dictionary,
-    //(const word& name, const Time& runTime, const dictionary& dict),
-    (const word& name),
-    //(name, runTime, dict)
-    (name)
-);
-
-
     // Static Data Members
 
         //- Static data staticData
         static const label staticData;
 
+        //- Runtime type information
+        TypeName("boyaoSubClass2");
+
 
     // Constructors
 
         //- Construct null
-        boyaoClass2();
+        boyaoSubClass2();
 
         //- Construct from components
-        boyaoClass2(const label& data);
+        boyaoSubClass2(const label& data);
 
         //- Construct from components
-        boyaoClass2(const word& name);
+        boyaoSubClass2(const word& name);
 
         //- Construct from Istream
-        boyaoClass2(Istream&);
+        boyaoSubClass2(Istream&);
 
         //- Copy constructor
-        boyaoClass2(const boyaoClass2&);
+        boyaoSubClass2(const boyaoSubClass2&);
 
         //- Disallow default bitwise copy construction
-        //boyaoClass2(const boyaoClass2&) = delete;
+//        boyaoSubClass2(const boyaoSubClass2&) = delete;
 
 
     // Selectors
 
         //- Select null constructed
-    //   static autoPtr<boyaoClass2> New();
-        static autoPtr<boyaoClass2> New(const fvMesh&);
+        static autoPtr<boyaoSubClass2> New();
+        static autoPtr<boyaoClass2> New
+        (
+            const fvMesh& meshFile
+        );
 
 
     //- Destructor
-    virtual ~boyaoClass2();
+    virtual ~boyaoSubClass2();
 
 
     // Member Functions
+    void printHelloWorld() {
+      cout << "Hello world form boyaoSubClass2" << '\n';
+    }
 
         // Access
 
@@ -140,12 +132,11 @@ declareRunTimeSelectionTable
 
 
     // Member Operators
-   virtual void printHelloWorld()=0;
 
-        //void operator=(const boyaoClass2&);
+        //void operator=(const boyaoSubClass2&);
 
         //- Disallow default bitwise assignment
-        void operator=(const boyaoClass2&) = delete;
+//        void operator=(const boyaoSubClass2&) = delete;
 
 
     // Friend Functions
@@ -154,8 +145,8 @@ declareRunTimeSelectionTable
 
     // IOstream Operators
 
-        friend Istream& operator>>(Istream&, boyaoClass2&);
-        friend Ostream& operator<<(Ostream&, const boyaoClass2&);
+        friend Istream& operator>>(Istream&, boyaoSubClass2&);
+        friend Ostream& operator<<(Ostream&, const boyaoSubClass2&);
 };
 
 
@@ -165,7 +156,7 @@ declareRunTimeSelectionTable
 
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 
-#include "boyaoClass2I.H"
+#include "boyaoSubClass2I.H"
 
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 

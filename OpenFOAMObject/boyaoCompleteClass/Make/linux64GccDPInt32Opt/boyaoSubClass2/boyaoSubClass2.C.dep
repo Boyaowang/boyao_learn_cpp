@@ -1,10 +1,10 @@
-$(OBJECTS_DIR)/boyaoSubClass/boyaoSubClass.C.dep: \
-boyaoSubClass/boyaoSubClass.C \
-lnInclude/boyaoSubClass.H \
+$(OBJECTS_DIR)/boyaoSubClass2/boyaoSubClass2.C.dep: \
+boyaoSubClass2/boyaoSubClass2.C \
+lnInclude/boyaoSubClass2.H \
 $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/addToRunTimeSelectionTable.H \
 boyaoClass2.H \
 $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/IOobject.H \
-lnInclude/boyaoSubClassI.H \
+lnInclude/boyaoSubClass2I.H \
 $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/Time.H \
 $(WM_PROJECT_DIR)/src/finiteVolume/lnInclude/fvMesh.H \
 $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/dictionary.H \
@@ -404,11 +404,11 @@ $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/MatrixIO.C \
 $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/MatrixBlockI.H \
 $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/MatrixBlock.C \
 
-lnInclude/boyaoSubClass.H :
+lnInclude/boyaoSubClass2.H :
 $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/addToRunTimeSelectionTable.H :
 boyaoClass2.H :
 $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/IOobject.H :
-lnInclude/boyaoSubClassI.H :
+lnInclude/boyaoSubClass2I.H :
 $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/Time.H :
 $(WM_PROJECT_DIR)/src/finiteVolume/lnInclude/fvMesh.H :
 $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/dictionary.H :

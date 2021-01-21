@@ -55,18 +55,72 @@ Foam::boyaoClass2::boyaoClass2()
 Foam::boyaoClass2::boyaoClass2(const label& data)
 {}
 
+Foam::boyaoClass2::boyaoClass2(const word& name)
+{
+  Info << "you input a name " << name << nl;
+}
 
 Foam::boyaoClass2::boyaoClass2(const boyaoClass2&)
 {}
 
 
+
 // * * * * * * * * * * * * * * * * Selectors * * * * * * * * * * * * * * * * //
 
+// Foam::autoPtr<Foam::boyaoClass2>
+// Foam::boyaoClass2::New()
+// {
+//     return autoPtr<boyaoClass2>(new boyaoClass2);
+// }
+
 Foam::autoPtr<Foam::boyaoClass2>
-Foam::boyaoClass2::New()
-{
-    return autoPtr<boyaoClass2>(new boyaoClass2);
-}
+Foam::boyaoClass2::New
+ (
+     const fvMesh& mesh
+ )
+ {
+
+     IOobject nameBoyaoSub
+     (
+         "boyaoSubProperties", //this indicates which file in constant folder it is in
+         mesh.time().constant(),
+         mesh,
+         IOobject::MUST_READ_IF_MODIFIED,
+         IOobject::NO_WRITE,
+         false
+     );
+
+
+     word modelType("none");
+     if (nameBoyaoSub.typeHeaderOk<IOdictionary>(false))
+     {
+         IOdictionary(nameBoyaoSub).lookup("reactorProperties") >> modelType; //here you search for the model e.g. P1 model in the run folder
+     }
+     else
+     {
+         Info<< "Reactor model not active: reactorProperties not found"
+             << endl;
+     }
+
+     Info<< "Selecting reactor model " << modelType << endl; // print the model you have chosed
+
+
+      boyaoClass2::dictionaryConstructorTable::iterator cstrIter =
+          boyaoClass2::dictionaryConstructorTablePtr_->find(modelType);
+
+
+     if (cstrIter == boyaoClass2::dictionaryConstructorTablePtr_->end())
+     {
+         FatalErrorInFunction
+             << "Unknown radiationModel type "
+             << modelType << nl << nl
+             << "Valid radiationModel types are:" << nl
+             << boyaoClass2::dictionaryConstructorTablePtr_->sortedToc()
+             << exit(FatalError);
+     }
+     const word& name = "name";
+     return autoPtr<boyaoClass2>(cstrIter()(name));
+ }
 
 
 // * * * * * * * * * * * * * * * * Destructor  * * * * * * * * * * * * * * * //

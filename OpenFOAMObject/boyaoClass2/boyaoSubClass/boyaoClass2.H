@@ -35,8 +35,6 @@ SourceFiles
 #ifndef _boyaoClass2_H
 #define _boyaoClass2_H
 
-#include "Time.H"
-#include "fvMesh.H"
 #include "dictionary.H"
 #include "typeInfo.H"
 #include "autoPtr.H"
@@ -50,6 +48,7 @@ namespace Foam
 // Forward declaration of classes
 class Istream;
 class Ostream;
+class Time;
 
 // Forward declaration of friend functions and operators
 class boyaoClass2;
@@ -83,10 +82,8 @@ declareRunTimeSelectionTable
     autoPtr,
     boyaoClass2,
     dictionary,
-    //(const word& name, const Time& runTime, const dictionary& dict),
-    (const word& name),
-    //(name, runTime, dict)
-    (name)
+    (const word& name, const Time& runTime, const dictionary& dict),
+    (name, runTime, dict)
 );
 
 
@@ -104,9 +101,6 @@ declareRunTimeSelectionTable
         //- Construct from components
         boyaoClass2(const label& data);
 
-        //- Construct from components
-        boyaoClass2(const word& name);
-
         //- Construct from Istream
         boyaoClass2(Istream&);
 
@@ -120,8 +114,7 @@ declareRunTimeSelectionTable
     // Selectors
 
         //- Select null constructed
-    //   static autoPtr<boyaoClass2> New();
-        static autoPtr<boyaoClass2> New(const fvMesh&);
+        static autoPtr<boyaoClass2> New();
 
 
     //- Destructor
@@ -140,12 +133,11 @@ declareRunTimeSelectionTable
 
 
     // Member Operators
-   virtual void printHelloWorld()=0;
 
-        //void operator=(const boyaoClass2&);
+        void operator=(const boyaoClass2&);
 
         //- Disallow default bitwise assignment
-        void operator=(const boyaoClass2&) = delete;
+        //void operator=(const boyaoClass2&) = delete;
 
 
     // Friend Functions

@@ -22,18 +22,18 @@ License
     along with OpenFOAM.  If not, see <http://www.gnu.org/licenses/>.
 
 \*---------------------------------------------------------------------------*/
-#include "boyaoSubClass.H"
+#include "boyaoSubClass2.H"
 #include "addToRunTimeSelectionTable.H"
 
 namespace Foam
 {
-    defineTypeNameAndDebug(boyaoSubClass, 0);
-    addToRunTimeSelectionTable(boyaoClass2, boyaoSubClass, dictionary);
+    defineTypeNameAndDebug(boyaoSubClass2, 0);
+    addToRunTimeSelectionTable(boyaoClass2, boyaoSubClass2, dictionary);
 }
 
 // * * * * * * * * * * * * * * Static Data Members * * * * * * * * * * * * * //
 
-//const dataType Foam::boyaoSubClass::staticData();
+//const dataType Foam::boyaoSubClass2::staticData();
 
 
 // * * * * * * * * * * * * * Static Member Functions * * * * * * * * * * * * //
@@ -47,13 +47,13 @@ namespace Foam
 
 // * * * * * * * * * * * * * * * * Constructors  * * * * * * * * * * * * * * //
 
-Foam::boyaoSubClass::boyaoSubClass()
+Foam::boyaoSubClass2::boyaoSubClass2()
 :
     boyaoClass2()
 {}
 
   //- Construct from components
-Foam::boyaoSubClass::boyaoSubClass(const word& name)
+Foam::boyaoSubClass2::boyaoSubClass2(const word& name)
 :
     boyaoClass2(name)
 {
@@ -61,14 +61,14 @@ Foam::boyaoSubClass::boyaoSubClass(const word& name)
 }
 
 
-// Foam::boyaoSubClass::boyaoSubClass(const dataType& data)
+// Foam::boyaoSubClass2::boyaoSubClass2(const dataType& data)
 // :
 //     baseClassName(),
 //     data_(data)
 // {}
 //
 //
-// Foam::boyaoSubClass::boyaoSubClass(const boyaoSubClass&)
+// Foam::boyaoSubClass2::boyaoSubClass2(const boyaoSubClass2&)
 // :
 //     baseClassName(),
 //     data_()
@@ -77,14 +77,14 @@ Foam::boyaoSubClass::boyaoSubClass(const word& name)
 
 // * * * * * * * * * * * * * * * * Selectors * * * * * * * * * * * * * * * * //
 
-Foam::autoPtr<Foam::boyaoSubClass>
-Foam::boyaoSubClass::New()
+Foam::autoPtr<Foam::boyaoSubClass2>
+Foam::boyaoSubClass2::New()
 {
-    return autoPtr<boyaoSubClass>(new boyaoSubClass);
+    return autoPtr<boyaoSubClass2>(new boyaoSubClass2);
 }
 
 
-Foam::autoPtr<Foam::boyaoClass2> Foam::boyaoSubClass::New
+Foam::autoPtr<Foam::boyaoClass2> Foam::boyaoSubClass2::New
  (
      const fvMesh& mesh
  )
@@ -167,7 +167,7 @@ Foam::autoPtr<Foam::boyaoClass2> Foam::boyaoSubClass::New
 
 // * * * * * * * * * * * * * * * * Destructor  * * * * * * * * * * * * * * * //
 
-Foam::boyaoSubClass::~boyaoSubClass()
+Foam::boyaoSubClass2::~boyaoSubClass2()
 {}
 
 
@@ -176,7 +176,7 @@ Foam::boyaoSubClass::~boyaoSubClass()
 
 // * * * * * * * * * * * * * * Member Operators  * * * * * * * * * * * * * * //
 
-// void Foam::boyaoSubClass::operator=(const boyaoSubClass& rhs)
+// void Foam::boyaoSubClass2::operator=(const boyaoSubClass2& rhs)
 // {
 //     // Check for assignment to self
 //     if (this == &rhs)

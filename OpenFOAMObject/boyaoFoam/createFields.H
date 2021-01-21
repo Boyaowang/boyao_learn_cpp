@@ -71,5 +71,3 @@
 // const dictionary somePropertiesDict = someProperties.subDict("boyaoClass1");
 //
 //     boyaoClass boyao("boyaow", runTime, somePropertiesDict);
-boyaoSubClass boyaoSub("boyaoSub");
-autoPtr<boyaoClass2> boyaoFirstSelector(boyaoClass2::New(mesh));

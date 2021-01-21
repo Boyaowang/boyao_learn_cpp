@@ -37,6 +37,7 @@ SourceFiles
 #define _boyaoSubClass_H
 
 #include "boyaoClass2.H"
+#include "IOobject.H"
 
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 
@@ -106,6 +107,10 @@ public:
 
         //- Select null constructed
         static autoPtr<boyaoSubClass> New();
+        static autoPtr<boyaoClass2> New
+        (
+            const fvMesh& meshFile
+        );
 
 
     //- Destructor
@@ -113,6 +118,9 @@ public:
 
 
     // Member Functions
+    void printHelloWorld() {
+      cout << "Hello world form boyaoSubClass" << '\n';
+    }
 
         // Access
 
