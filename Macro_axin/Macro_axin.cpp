@@ -7,6 +7,7 @@ using namespace std;
   axin(x);\
 }
 
+
 print_something("axin",axinxin);
 print_something("gouzi",gouzi);
 print_something("zixin",zixin);
@@ -24,6 +25,5 @@ int main(int argc, char const *argv[]) {
   numbers();
 
   std::cout << "name""name" << '\n';
-
   return 0;
 }

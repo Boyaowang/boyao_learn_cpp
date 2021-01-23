@@ -34,89 +34,88 @@
 
 
 
-    #define declareRunTimeSelectionTable(autoPtr,baseType,argNames,argList,parList)\
-                                                                                   \
-        /* Construct from argList function pointer type */                         \
-        typedef autoPtr<baseType> (*argNames##ConstructorPtr)argList;              \
-                                                                                   \
-        /* Construct from argList function table type */                           \
-        typedef HashTable<argNames##ConstructorPtr, word, string::hash>            \
-            argNames##ConstructorTable;                                            \
-                                                                                   \
-        /* Construct from argList function pointer table pointer */                \
-        static argNames##ConstructorTable* argNames##ConstructorTablePtr_;         \
-                                                                                   \
-        /* Table constructor called from the table add function */                 \
-        static void construct##argNames##ConstructorTables();                      \
-                                                                                   \
-        /* Table destructor called from the table add function destructor */       \
-        static void destroy##argNames##ConstructorTables();                        \
-                                                                                   \
-        /* Class to add constructor from argList to table */                       \
-        template<class baseType##Type>                                             \
-        class add##argNames##ConstructorToTable                                    \
-        {                                                                          \
-        public:                                                                    \
-                                                                                   \
-            static autoPtr<baseType> New argList                                   \
-            {                                                                      \
-                return autoPtr<baseType>(new baseType##Type parList);              \
-            }                                                                      \
-                                                                                   \
-            add##argNames##ConstructorToTable                                      \
-            (                                                                      \
-                const word& lookup = baseType##Type::typeName                      \
-            )                                                                      \
-            {                                                                      \
-                construct##argNames##ConstructorTables();                          \
-                if (!argNames##ConstructorTablePtr_->insert(lookup, New))          \
-                {                                                                  \
-                    std::cerr<< "Duplicate entry " << lookup                       \
-                        << " in runtime selection table " << #baseType             \
-                        << std::endl;                                              \
-                    error::safePrintStack(std::cerr);                              \
-                }                                                                  \
-            }                                                                      \
-                                                                                   \
-            ~add##argNames##ConstructorToTable()                                   \
-            {                                                                      \
-                destroy##argNames##ConstructorTables();                            \
-            }                                                                      \
-        };                                                                         \
-                                                                                   \
-        /* Class to add constructor from argList to table */                       \
-        /* Remove only the entry (not the table) upon destruction */               \
-        template<class baseType##Type>                                             \
-        class addRemovable##argNames##ConstructorToTable                           \
-        {                                                                          \
-            /* retain lookup name for later removal */                             \
-            const word& lookup_;                                                   \
-                                                                                   \
-        public:                                                                    \
-                                                                                   \
-            static autoPtr<baseType> New argList                                   \
-            {                                                                      \
-                return autoPtr<baseType>(new baseType##Type parList);              \
-            }                                                                      \
-                                                                                   \
-            addRemovable##argNames##ConstructorToTable                             \
-            (                                                                      \
-                const word& lookup = baseType##Type::typeName                      \
-            )                                                                      \
-            :                                                                      \
-                lookup_(lookup)                                                    \
-            {                                                                      \
-                construct##argNames##ConstructorTables();                          \
-                argNames##ConstructorTablePtr_->set(lookup, New);                  \
-            }                                                                      \
-                                                                                   \
-            ~addRemovable##argNames##ConstructorToTable()                          \
-            {                                                                      \
-                if (argNames##ConstructorTablePtr_)                                \
-                {                                                                  \
-                    argNames##ConstructorTablePtr_->erase(lookup_);                \
-                }                                                                  \
-            }                                                                      \
+    #define declareRunTimeSelectionTable(autoPtr,psiReactionThermo,fvMesh,(const fvMesh& mesh, const word& phaseName),(mesh, phaseName))
+        /* Construct from (const fvMesh& mesh, const word& phaseName) function pointer type */
+        typedef autoPtr<psiReactionThermo> (*fvMeshConstructorPtr)(const fvMesh& mesh, const word& phaseName);
+
+        /* Construct from (const fvMesh& mesh, const word& phaseName) function table type */
+        typedef HashTable<fvMeshConstructorPtr, word, string::hash>
+            fvMeshConstructorTable;
+
+        /* Construct from (const fvMesh& mesh, const word& phaseName) function pointer table pointer */
+        static fvMeshConstructorTable* fvMeshConstructorTablePtr_;
+
+        /* Table constructor called from the table add function */
+        static void constructfvMeshConstructorTables();
+
+        /* Table destructor called from the table add function destructor */
+        static void destroyfvMeshConstructorTables();
+
+        /* Class to add constructor from (const fvMesh& mesh, const word& phaseName) to table */
+        template<class psiReactionThermoType>
+        class addfvMeshConstructorToTable
+        {
+        public:
+
+            static autoPtr<psiReactionThermo> New (const fvMesh& mesh, const word& phaseName)
+            {
+                return autoPtr<psiReactionThermo>(new psiReactionThermoType (mesh, phaseName));
+            }
+
+            addfvMeshConstructorToTable
+            (
+                const word& lookup = psiReactionThermoType::typeName
+            )
+            {
+                constructfvMeshConstructorTables();
+                if (!fvMeshConstructorTablePtr_->insert(lookup, New))
+                {
+                    std::cerr<< "Duplicate entry " << lookup
+                        << " in runtime selection table " << "psiReactionThermo"
+                        << std::endl;
+                    error::safePrintStack(std::cerr);
+                }
+            }
+
+            ~addfvMeshConstructorToTable()
+            {
+                destroyfvMeshConstructorTables();
+            }
+        };
+
+        /* Class to add constructor from (const fvMesh& mesh, const word& phaseName) to table */
+        /* Remove only the entry (not the table) upon destruction */
+        template<class psiReactionThermoType>
+        class addRemovablefvMeshConstructorToTable
+        {
+            /* retain lookup name for later removal */
+            const word& lookup_;
+
+        public:
+
+            static autoPtr<psiReactionThermo> New (const fvMesh& mesh, const word& phaseName)
+            {
+                return autoPtr<psiReactionThermo>(new psiReactionThermoType (mesh, phaseName));
+            }
+
+            addRemovablefvMeshConstructorToTable
+            (
+                const word& lookup = psiReactionThermoType::typeName
+            )
+            :
+                lookup_(lookup)
+            {
+                constructfvMeshConstructorTables();
+                fvMeshConstructorTablePtr_->set(lookup, New);
+            }
+
+            ~addRemovablefvMeshConstructorToTable()
+            {
+                if (fvMeshConstructorTablePtr_)
+                {
+                    fvMeshConstructorTablePtr_->erase(lookup_);
+                }
+            }
         };
 
 

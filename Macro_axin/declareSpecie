@@ -1,0 +1,13 @@
+#define defineTemplateTypeNameAndDebugWithName(Type, Name, DebugSwitch)        \
+    defineTemplateTypeNameWithName(Type, Name);                                \
+    defineTemplateDebugSwitchWithName(Type, Name, DebugSwitch)
+    
+    
+#define declareSpecieId(speciesName) \
+    const label id_##speciesName = this->owner().composition().localId(idSolid);
+    
+    
+ int main{
+ defineTemplateTypeNameAndDebugWithName(CELL,ds,dfgs);
+ }   
+
