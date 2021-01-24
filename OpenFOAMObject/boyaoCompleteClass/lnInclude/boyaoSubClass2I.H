@@ -1,0 +1,1 @@
+../boyaoSubClass2/boyaoSubClass2I.H

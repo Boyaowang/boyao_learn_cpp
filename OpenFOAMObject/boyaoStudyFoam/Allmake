@@ -1,4 +1,4 @@
 cd ../boyaoCompleteClass
-wmake -j 8
+wmake -j 16
 cd ../boyaoStudyFoam
-wmake -j 8
+wmake -j 16
