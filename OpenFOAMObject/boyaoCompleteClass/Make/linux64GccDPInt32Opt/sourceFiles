@@ -1,4 +1,5 @@
 SOURCE = \
 boyaoSubClass/boyaoSubClass.C \
 boyaoSubClass2/boyaoSubClass2.C \
-boyaoClass2.C 
+boyaoClass2.C \
+boyaoClass2IO.C 

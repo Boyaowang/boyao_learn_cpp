@@ -126,13 +126,12 @@ Info << "componentsBoyao[0]" << componentsBoyao[0] << nl;
       Info << it.key() << nl;
     }
 
+
+    Info << "the all components are " << slgThermo.solids().components() << nl;
     forAll(slgThermo.solids().components(),i)
     {
       Info << "component " << i  << " of the solids is "
       << slgThermo.solids().components()[i] << nl;
     }
 
-    forAll(myPhasePropertiesList, i)
-    {
-      Info << "print the phase properties of " << i << "th phase" <<myPhasePropertiesList[i].phase() << nl;
-    }
+    Info << "typeId " << thermo.type() << nl;

@@ -35,6 +35,11 @@ SourceFiles
 #ifndef _boyaoClass2_H
 #define _boyaoClass2_H
 
+
+#include "NamedEnum.H"
+#include "Tuple2.H"
+#include "PtrList.H"
+#include "volFields.H"
 #include "Time.H"
 #include "fvMesh.H"
 #include "dictionary.H"
@@ -67,6 +72,8 @@ class boyaoClass2
 
         //- Description of data_
         label data_;
+        scalarField Y_;
+        List<word> names_;
 
 
     // Private Member Functions
@@ -140,12 +147,12 @@ declareRunTimeSelectionTable
 
 
     // Member Operators
-   virtual void printHelloWorld()=0;
+   virtual void printHelloWorld(){};
 
-        //void operator=(const boyaoClass2&);
+        void operator=(const boyaoClass2&);
 
         //- Disallow default bitwise assignment
-        void operator=(const boyaoClass2&) = delete;
+        //void operator=(const boyaoClass2&) = delete;
 
 
     // Friend Functions

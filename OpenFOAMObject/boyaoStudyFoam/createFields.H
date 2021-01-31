@@ -73,3 +73,54 @@
 //     boyaoClass boyao("boyaow", runTime, somePropertiesDict);
 boyaoSubClass boyaoSub("boyaoSub");
 autoPtr<boyaoClass2> boyaoFirstSelector(boyaoClass2::New(mesh));
+
+IOdictionary someProperties
+(
+    IOobject
+    (
+        "boyaoSubProperties",
+        runTime.constant(),
+        mesh,
+        IOobject::MUST_READ_IF_MODIFIED,
+        IOobject::NO_WRITE
+    )
+);
+
+// List<word> boyaoSubPropertiesList
+// (
+//   someProperties.subDict("boyaoPropertiesList").toc()
+// );
+
+
+// forAll(boyaoSubPropertiesList,i)
+// {
+//   Info << boyaoSubPropertiesList[i] << nl;
+// }
+//
+//Info << someProperties.subDict("boyaoPropertiesList") << nl;
+Istream& boyaoInput = someProperties.subDict("testList").lookup("boyaoPropertiesList");
+Istream& boyaoInput2 = someProperties.subDict("testList").lookup("boyaoPropertiesList2");
+Info << someProperties.subDict("testList").lookup("boyaoPropertiesList") << nl;
+//boyaoClass2 boyaoSubPropertiesList2 = boyaoInput;
+List<boyaoClass2> boyaoSubPropertiesList3
+ (
+   boyaoInput
+ );
+
+boyaoClass2 testInput(boyaoInput2);
+//dictionaryEntry boyaoInfo(dictionary::null, someProperties.subDict("boyaoPropertiesList"));
+scalarField dMassDV(5, 0.0);
+
+Info<< "\nReading field U\n" << endl;
+volScalarField S
+(
+    IOobject
+    (
+        "S",
+        runTime.timeName(),
+        mesh,
+        IOobject::MUST_READ,
+        IOobject::AUTO_WRITE
+    ),
+    mesh
+);

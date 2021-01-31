@@ -29,7 +29,7 @@ Description
 \*---------------------------------------------------------------------------*/
 
 #include "fvCFD.H"
-//#include "boyaoClass.H"
+#include "boyaoClass2.H"
 #include "boyaoSubClass.H"
 //using namespace Foam::functionObjects;
 
@@ -57,6 +57,7 @@ int main(int argc, char *argv[])
     // return 0;
     //Info << *functionObject::dictionaryConstructorTablePtr_ << nl;
     Info << *boyaoClass2::dictionaryConstructorTablePtr_ << nl;
+
     while (runTime.run())
     {
         runTime.write();

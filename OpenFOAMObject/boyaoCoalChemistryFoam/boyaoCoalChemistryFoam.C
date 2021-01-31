@@ -91,14 +91,16 @@ int main(int argc, char *argv[])
 
         rhoEffLagrangian = coalParcels.rhoEff() + limestoneParcels.rhoEff();
         pDyn = 0.5*rho*magSqr(U);
-
+        Info << "start calculating coalParcels" << nl;
         coalParcels.evolve();
+        Info << "end calculating coalParcels" << nl;
 
         limestoneParcels.evolve();
 
         #include "rhoEqn.H"
 
         // --- Pressure-velocity PIMPLE corrector loop
+
         while (pimple.loop())
         {
             #include "UEqn.H"

@@ -134,16 +134,16 @@ Foam::boyaoClass2::~boyaoClass2()
 
 // * * * * * * * * * * * * * * Member Operators  * * * * * * * * * * * * * * //
 
-// void Foam::boyaoClass2::operator=(const boyaoClass2& rhs)
-// {
-//     // Check for assignment to self
-//     if (this == &rhs)
-//     {
-//         FatalErrorInFunction
-//             << "Attempted assignment to self"
-//             << abort(FatalError);
-//     }
-// }
+void Foam::boyaoClass2::operator=(const boyaoClass2& rhs)
+{
+    // Check for assignment to self
+    if (this == &rhs)
+    {
+        FatalErrorInFunction
+            << "Attempted assignment to self"
+            << abort(FatalError);
+    }
+}
 
 // * * * * * * * * * * * * * * Friend Functions  * * * * * * * * * * * * * * //
 
