@@ -126,7 +126,6 @@ Foam::hePsiThermo<BasicPsiThermo, MixtureType>::hePsiThermo
 :
     heThermo<BasicPsiThermo, MixtureType>(mesh, phaseName)
 {
-  Info << "call hePsiThermo Constructor " << nl; 
     calculate();
 
     // Switch on saving old time

@@ -4,8 +4,9 @@ cd ${0%/*} || exit 1    # Run from this directory
 # Parse arguments for library compilation
 . $WM_PROJECT_DIR/wmake/scripts/AllwmakeParseArguments
 
-wmake -j $targetType basic
-wmake -j $targetType distributionModels
+cd thermophysicalModels
+./Allwmake
+cd ..
 wmake -j $targetType intermediate
 wmake -j $targetType turbulence
 wmake -j $targetType coalCombustion

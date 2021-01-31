@@ -1,7 +1,7 @@
 EXE_INC = \
-    -I..//basic/lnInclude \
+    -I$(LIB_SRC)/lagrangian/basic/lnInclude \
     -I../intermediate/lnInclude \
-    -I../distributionModels/lnInclude \
+    -I$(LIB_SRC)/lagrangian/distributionModels/lnInclude \
     -I$(LIB_SRC)/transportModels/compressible/lnInclude \
     -I$(LIB_SRC)/thermophysicalModels/specie/lnInclude \
     -I$(LIB_SRC)/thermophysicalModels/basic/lnInclude \
@@ -22,9 +22,9 @@ EXE_INC = \
 LIB_LIBS = \
     -L$(FOAM_USER_LIBBIN) \
     -lboyaolagrangianTurbulence \
-    -lboyaolagrangian \
+    -llagrangian \
     -lboyaolagrangianIntermediate \
-    -lboyaodistributionModels \
+    -ldistributionModels \
     -lspecie \
     -lcompressibleTransportModels \
     -lfluidThermophysicalModels \

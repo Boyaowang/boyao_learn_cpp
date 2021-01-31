@@ -14,7 +14,7 @@ $(WM_PROJECT_DIR)/src/thermophysicalModels/SLGThermo/lnInclude/SLGThermo.H \
 ../intermediate/lnInclude/ThermoCloudI.H \
 ../intermediate/lnInclude/ThermoCloud.C \
 $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/contiguous.H \
-../basic/lnInclude/particle.H \
+$(WM_PROJECT_DIR)/src/lagrangian/basic/lnInclude/particle.H \
 ../intermediate/lnInclude/KinematicParcel.H \
 ../intermediate/lnInclude/ThermoParcel.H \
 lnInclude/DispersionRASModel.H \
@@ -24,7 +24,7 @@ lnInclude/StochasticDispersionRAS.C \
 $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/Random.H \
 lnInclude/BrownianMotionForceI.H \
 lnInclude/BrownianMotionForce.C \
-../basic/lnInclude/Cloud.H \
+$(WM_PROJECT_DIR)/src/lagrangian/basic/lnInclude/Cloud.H \
 ../intermediate/lnInclude/kinematicCloud.H \
 $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/IOdictionary.H \
 $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/autoPtr.H \
@@ -54,10 +54,10 @@ $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/OFstream.H \
 $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/tetPointRef.H \
 $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/FixedList.H \
 $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/polyMeshTetDecomposition.H \
-../basic/lnInclude/particleMacros.H \
+$(WM_PROJECT_DIR)/src/lagrangian/basic/lnInclude/particleMacros.H \
 $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/vectorTensorTransform.H \
-../basic/lnInclude/particleI.H \
-../basic/lnInclude/particleTemplates.C \
+$(WM_PROJECT_DIR)/src/lagrangian/basic/lnInclude/particleI.H \
+$(WM_PROJECT_DIR)/src/lagrangian/basic/lnInclude/particleTemplates.C \
 $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/IOstream.H \
 $(WM_PROJECT_DIR)/src/finiteVolume/lnInclude/interpolation.H \
 $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/demandDrivenEntry.H \
@@ -86,7 +86,7 @@ $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/IOField.H \
 $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/CompactIOField.H \
 $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/polyMesh.H \
 $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/PackedBoolList.H \
-../basic/lnInclude/Cloud.C \
+$(WM_PROJECT_DIR)/src/lagrangian/basic/lnInclude/Cloud.C \
 $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/typeInfo.H \
 $(WM_PROJECT_DIR)/src/finiteVolume/lnInclude/volFieldsFwd.H \
 $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/baseIOdictionary.H \
@@ -176,7 +176,7 @@ $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/transformField.H \
 $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/vectorTensorTransformI.H \
 $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/vectorTensorTransformTemplates.C \
 $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/Time.H \
-../basic/lnInclude/IOPosition.H \
+$(WM_PROJECT_DIR)/src/lagrangian/basic/lnInclude/IOPosition.H \
 $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/cyclicPolyPatch.H \
 $(WM_PROJECT_DIR)/src/meshTools/lnInclude/cyclicAMIPolyPatch.H \
 $(WM_PROJECT_DIR)/src/meshTools/lnInclude/cyclicACMIPolyPatch.H \
@@ -236,7 +236,7 @@ $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/PackedBoolListI.H \
 $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/globalMeshData.H \
 $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/PstreamCombineReduceOps.H \
 $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/mapPolyMesh.H \
-../basic/lnInclude/CloudIO.C \
+$(WM_PROJECT_DIR)/src/lagrangian/basic/lnInclude/CloudIO.C \
 $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/error.H \
 $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/fieldTypes.H \
 $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/lduAddressing.H \
@@ -362,7 +362,7 @@ $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/dlLibraryTable.H \
 $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/functionObjectList.H \
 $(WM_PROJECT_DIR)/src/OSspecific/POSIX/lnInclude/sigWriteNow.H \
 $(WM_PROJECT_DIR)/src/OSspecific/POSIX/lnInclude/sigStopAtWriteNow.H \
-../basic/lnInclude/IOPosition.C \
+$(WM_PROJECT_DIR)/src/lagrangian/basic/lnInclude/IOPosition.C \
 $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/coupleGroupIdentifier.H \
 $(WM_PROJECT_DIR)/src/meshTools/lnInclude/AMIInterpolation.H \
 $(WM_PROJECT_DIR)/src/meshTools/lnInclude/cyclicAMIPolyPatchI.H \
@@ -844,7 +844,7 @@ $(WM_PROJECT_DIR)/src/thermophysicalModels/SLGThermo/lnInclude/SLGThermo.H :
 ../intermediate/lnInclude/ThermoCloudI.H :
 ../intermediate/lnInclude/ThermoCloud.C :
 $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/contiguous.H :
-../basic/lnInclude/particle.H :
+$(WM_PROJECT_DIR)/src/lagrangian/basic/lnInclude/particle.H :
 ../intermediate/lnInclude/KinematicParcel.H :
 ../intermediate/lnInclude/ThermoParcel.H :
 lnInclude/DispersionRASModel.H :
@@ -854,7 +854,7 @@ lnInclude/StochasticDispersionRAS.C :
 $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/Random.H :
 lnInclude/BrownianMotionForceI.H :
 lnInclude/BrownianMotionForce.C :
-../basic/lnInclude/Cloud.H :
+$(WM_PROJECT_DIR)/src/lagrangian/basic/lnInclude/Cloud.H :
 ../intermediate/lnInclude/kinematicCloud.H :
 $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/IOdictionary.H :
 $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/autoPtr.H :
@@ -884,10 +884,10 @@ $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/OFstream.H :
 $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/tetPointRef.H :
 $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/FixedList.H :
 $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/polyMeshTetDecomposition.H :
-../basic/lnInclude/particleMacros.H :
+$(WM_PROJECT_DIR)/src/lagrangian/basic/lnInclude/particleMacros.H :
 $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/vectorTensorTransform.H :
-../basic/lnInclude/particleI.H :
-../basic/lnInclude/particleTemplates.C :
+$(WM_PROJECT_DIR)/src/lagrangian/basic/lnInclude/particleI.H :
+$(WM_PROJECT_DIR)/src/lagrangian/basic/lnInclude/particleTemplates.C :
 $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/IOstream.H :
 $(WM_PROJECT_DIR)/src/finiteVolume/lnInclude/interpolation.H :
 $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/demandDrivenEntry.H :
@@ -916,7 +916,7 @@ $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/IOField.H :
 $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/CompactIOField.H :
 $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/polyMesh.H :
 $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/PackedBoolList.H :
-../basic/lnInclude/Cloud.C :
+$(WM_PROJECT_DIR)/src/lagrangian/basic/lnInclude/Cloud.C :
 $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/typeInfo.H :
 $(WM_PROJECT_DIR)/src/finiteVolume/lnInclude/volFieldsFwd.H :
 $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/baseIOdictionary.H :
@@ -1006,7 +1006,7 @@ $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/transformField.H :
 $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/vectorTensorTransformI.H :
 $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/vectorTensorTransformTemplates.C :
 $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/Time.H :
-../basic/lnInclude/IOPosition.H :
+$(WM_PROJECT_DIR)/src/lagrangian/basic/lnInclude/IOPosition.H :
 $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/cyclicPolyPatch.H :
 $(WM_PROJECT_DIR)/src/meshTools/lnInclude/cyclicAMIPolyPatch.H :
 $(WM_PROJECT_DIR)/src/meshTools/lnInclude/cyclicACMIPolyPatch.H :
@@ -1066,7 +1066,7 @@ $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/PackedBoolListI.H :
 $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/globalMeshData.H :
 $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/PstreamCombineReduceOps.H :
 $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/mapPolyMesh.H :
-../basic/lnInclude/CloudIO.C :
+$(WM_PROJECT_DIR)/src/lagrangian/basic/lnInclude/CloudIO.C :
 $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/error.H :
 $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/fieldTypes.H :
 $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/lduAddressing.H :
@@ -1192,7 +1192,7 @@ $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/dlLibraryTable.H :
 $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/functionObjectList.H :
 $(WM_PROJECT_DIR)/src/OSspecific/POSIX/lnInclude/sigWriteNow.H :
 $(WM_PROJECT_DIR)/src/OSspecific/POSIX/lnInclude/sigStopAtWriteNow.H :
-../basic/lnInclude/IOPosition.C :
+$(WM_PROJECT_DIR)/src/lagrangian/basic/lnInclude/IOPosition.C :
 $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/coupleGroupIdentifier.H :
 $(WM_PROJECT_DIR)/src/meshTools/lnInclude/AMIInterpolation.H :
 $(WM_PROJECT_DIR)/src/meshTools/lnInclude/cyclicAMIPolyPatchI.H :

@@ -4,18 +4,18 @@ cd ${0%/*} || exit 1    # Run from this directory
 # Parse arguments for library compilation
 . $WM_PROJECT_DIR/wmake/scripts/AllwmakeParseArguments
 
-wmake $targetType specie
-wmake $targetType solidSpecie
-wmake $targetType thermophysicalProperties
+wmake -j $targetType specie
+wmake -j $targetType solidSpecie
+wmake -j $targetType thermophysicalProperties
 
-wmake $targetType basic
-wmake $targetType reactionThermo
-wmake $targetType laminarFlameSpeed
-wmake $targetType chemistryModel
-wmake $targetType barotropicCompressibilityModel
-wmake $targetType SLGThermo
+wmake -j $targetType basic
+wmake -j $targetType reactionThermo
+wmake -j $targetType laminarFlameSpeed
+wmake -j $targetType chemistryModel
+wmake -j $targetType barotropicCompressibilityModel
+wmake -j $targetType SLGThermo
 
-wmake $targetType solidThermo
-wmake $targetType solidChemistryModel
+wmake -j $targetType solidThermo
+wmake -j $targetType solidChemistryModel
 
 #------------------------------------------------------------------------------
