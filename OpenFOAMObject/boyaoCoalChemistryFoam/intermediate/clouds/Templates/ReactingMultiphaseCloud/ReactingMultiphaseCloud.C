@@ -97,6 +97,7 @@ Foam::ReactingMultiphaseCloud<CloudType>::ReactingMultiphaseCloud
 
         if (readFields)
         {
+          Info << "the first place the readFields is called " << nl;
             parcelType::readFields(*this, this->composition());
             this->deleteLostParticles();
         }

@@ -26,11 +26,17 @@ const volScalarField& T = thermo.T();
 const volScalarField& psi = thermo.psi();
 
 multivariateSurfaceInterpolationScheme<scalar>::fieldTable fields;
-
+int idex = 0;
 forAll(Y, i)
 {
     fields.add(Y[i]);
+    // if (i == 2) {
+    //   Info << "i is equal to " << i << nl;
+    //   break;
+    // }
+    idex++;
 }
+Info << "the index is equal to " << idex << nl;
 fields.add(thermo.he());
 
 volScalarField rho

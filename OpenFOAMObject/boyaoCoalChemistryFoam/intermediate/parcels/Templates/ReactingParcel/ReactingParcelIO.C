@@ -100,7 +100,7 @@ void Foam::ReactingParcel<ParcelType>::readFields
 )
 {
     bool valid = c.size();
-
+    Info << "call reacting parcel readFields" << nl;
     ParcelType::readFields(c);
 
     IOField<scalar> mass0
@@ -195,7 +195,7 @@ void Foam::ReactingParcel<ParcelType>::writeFields
         {
             stateLabels = compModel.stateLabels()[0];
         }
-
+        int indexWrite = 0;
         forAll(phaseTypes, j)
         {
             IOField<scalar> Y
@@ -218,8 +218,13 @@ void Foam::ReactingParcel<ParcelType>::writeFields
                 const ReactingParcel<ParcelType>& p = iter();
                 Y[i++] = p.Y()[j];
             }
-
+            // if (j==1)
+            // {
+            //   Info << "indexWrite is " << indexWrite << nl;
+            //   break;
+            // }
             Y.write(np > 0);
+            indexWrite++;
         }
     }
 }

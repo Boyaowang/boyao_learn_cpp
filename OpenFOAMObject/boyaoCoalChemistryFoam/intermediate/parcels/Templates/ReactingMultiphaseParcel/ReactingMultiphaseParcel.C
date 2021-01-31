@@ -170,7 +170,7 @@ void Foam::ReactingMultiphaseParcel<ParcelType>::calc
     typedef typename TrackCloudType::reactingCloudType reactingCloudType;
     const CompositionModel<reactingCloudType>& composition =
         cloud.composition();
-    Info << "call calc function " << nl;
+    //Info << "call calc function " << nl;
 
     // Define local properties at beginning of timestep
     // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

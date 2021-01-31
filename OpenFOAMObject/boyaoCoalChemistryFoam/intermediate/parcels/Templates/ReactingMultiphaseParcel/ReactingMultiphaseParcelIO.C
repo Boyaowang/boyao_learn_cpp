@@ -104,9 +104,9 @@ void Foam::ReactingMultiphaseParcel<ParcelType>::readFields
 )
 {
     bool valid = c.size();
-
+    Info << "before call reacting parcel readFields" << nl;
     ParcelType::readFields(c, compModel);
-
+    Info << "after call reacting parcel readFields" << nl;
     // Get names and sizes for each Y...
     const label idGas = compModel.idGas();
     const wordList& gasNames = compModel.componentNames(idGas);
