@@ -120,9 +120,9 @@ int main(int argc, char *argv[])
         }
 
         rho = thermo.rho();
-
+        Info << "before runTime.write()" << nl;
         runTime.write();
-
+        Info << "after runTime.write()" << nl;
         Info<< "ExecutionTime = " << runTime.elapsedCpuTime() << " s"
             << "  ClockTime = " << runTime.elapsedClockTime() << " s"
             << nl << endl;

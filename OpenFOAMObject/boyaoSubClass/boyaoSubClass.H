@@ -66,6 +66,8 @@ class boyaoSubClass
         //- Description of data_
         label data_;
 
+        fvMesh mesh_;
+
 
     // Private Member Functions
 
@@ -92,6 +94,9 @@ public:
         //- Construct from components
         boyaoSubClass(const word& name);
 
+        //- Construct from mesh
+        boyaoSubClass(const fvMesh& mesh);
+
         //- Construct from Istream
         boyaoSubClass(Istream&);
 
@@ -113,6 +118,22 @@ public:
 
 
     // Member Functions
+    Foam::IOobject fieldIOobject
+    (
+      const word& fieldName,
+      const IOobject::readOption r
+    ) const
+    {
+      return IOobject
+      (
+        fieldName,
+        time().timeName(),
+        mesh_,
+        IOobject::MUST_READ,
+        IOobject::NO_WRITE,
+        false
+      );
+    }
 
         // Access
 

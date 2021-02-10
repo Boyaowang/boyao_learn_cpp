@@ -60,6 +60,14 @@ Foam::boyaoSubClass::boyaoSubClass(const word& name)
   Info << "call boyaoSub" << nl;
 }
 
+// Foam::boyaoSubClass::boyaoSubClass(const fvMesh& mesh)
+// :
+//     boyaoClass2(), mesh_(mesh)
+// {
+//   Info << "construct from mesh " << nl;
+// }
+
+
 
 // Foam::boyaoSubClass::boyaoSubClass(const dataType& data)
 // :

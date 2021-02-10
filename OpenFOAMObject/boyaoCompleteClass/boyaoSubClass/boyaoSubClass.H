@@ -38,6 +38,7 @@ SourceFiles
 
 #include "boyaoClass2.H"
 #include "IOobject.H"
+#include "Time.H"
 
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 
@@ -93,6 +94,9 @@ public:
         //- Construct from components
         boyaoSubClass(const word& name);
 
+        //- Construct from mesh
+        //boyaoSubClass(const fvMesh& mesh);
+
         //- Construct from Istream
         boyaoSubClass(Istream&);
 
@@ -120,6 +124,23 @@ public:
     // Member Functions
     void printHelloWorld() {
       cout << "Hello world form boyaoSubClass" << '\n';
+    }
+
+    Foam::IOobject fieldIOobject
+    (
+      const word& fieldName,
+      const fvMesh& mesh
+    ) const
+    {
+      return IOobject
+      (
+        fieldName,
+        mesh.time().timeName(),
+        mesh,
+        IOobject::MUST_READ,
+        IOobject::AUTO_WRITE,
+        true//false
+      );
     }
 
         // Access

@@ -1,0 +1,21 @@
+#!/bin/sh
+cd ${0%/*} || exit 1    # Run from this directory
+
+# Parse arguments for library compilation
+. $WM_PROJECT_DIR/wmake/scripts/AllwmakeParseArguments
+
+wmake -j $targetType specie
+wmake -j $targetType solidSpecie
+wmake -j $targetType thermophysicalProperties
+
+wmake -j $targetType basic
+wmake -j $targetType reactionThermo
+wmake -j $targetType laminarFlameSpeed
+wmake -j $targetType chemistryModel
+wmake -j $targetType barotropicCompressibilityModel
+wmake -j $targetType SLGThermo
+
+wmake -j $targetType solidThermo
+wmake -j $targetType solidChemistryModel
+
+#------------------------------------------------------------------------------

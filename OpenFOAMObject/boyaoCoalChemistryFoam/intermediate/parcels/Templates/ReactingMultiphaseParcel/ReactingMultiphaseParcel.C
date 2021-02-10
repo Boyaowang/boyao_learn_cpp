@@ -119,6 +119,8 @@ Foam::scalar Foam::ReactingMultiphaseParcel<ParcelType>::updateMassFractions
         this->updateMassFraction(mass0*YMix[LIQ], dMassLiquid, YLiquid_);
     scalar massSolid =
         this->updateMassFraction(mass0*YMix[SLD], dMassSolid, YSolid_);
+    Info << "massGas, massLiquid and massSolid " <<  massGas << " "
+         <<  massLiquid << " " <<  massSolid << nl;
 
     scalar massNew = max(massGas + massLiquid + massSolid, rootVSmall);
 
@@ -267,6 +269,10 @@ void Foam::ReactingMultiphaseParcel<ParcelType>::calc
 
     // Calc mass and enthalpy transfer due to devolatilisation
     Info << "before call calcDevolatilisation " << nl;
+
+    // Mass transfer of solid phase due to devolatilisation
+    scalarField dMassSOLID(YSolid_.size(),0.0);
+
     calcDevolatilisation
     (
         cloud,
@@ -283,6 +289,7 @@ void Foam::ReactingMultiphaseParcel<ParcelType>::calc
         YMix[SLD]*YSolid_,
         canCombust_,
         dMassDV,
+        dMassSOLID,
         Sh,
         Ne,
         NCpW,
@@ -294,10 +301,16 @@ void Foam::ReactingMultiphaseParcel<ParcelType>::calc
     // ~~~~~~~~~~~~~~~~~
 
     // Change in carrier phase composition due to surface reactions
-    scalarField dMassSRGas(YGas_.size(), 0.0);
-    scalarField dMassSRLiquid(YLiquid_.size(), 0.0);
-    scalarField dMassSRSolid(YSolid_.size(), 0.0);
-    scalarField dMassSRCarrier(composition.carrier().species().size(), 0.0);
+    // scalarField dMassSRGas(YGas_.size(), 0.0);
+    // scalarField dMassSRLiquid(YLiquid_.size(), 0.0);
+    // scalarField dMassSRSolid(YSolid_.size(), 0.0);
+    // scalarField dMassSRCarrier(composition.carrier().species().size(), 0.0);
+    scalarField dMassGas2(dMassSRGas);
+    scalarField dMassGas(dMassDV + dMassSRGas);
+    scalarField dMassLiquid(dMassPC + dMassSRLiquid);
+    scalarField dMassSolid(dMassSOLID + dMassSRSolid);
+    scalar mass1 =
+        updateMassFractions(mass0, dMassGas2, dMassLiquid, dMassSolid);
 
     // Calc mass and enthalpy transfer due to surface reactions
     calcSurfaceReactions
@@ -556,7 +569,8 @@ void Foam::ReactingMultiphaseParcel<ParcelType>::calcDevolatilisation
         YLiquidEff,
         YSolidEff,
         canCombust,
-        dMassDV
+        dMassDV,
+        dMassSOLID
     );
 
     scalar dMassTot = sum(dMassDV);

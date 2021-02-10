@@ -114,13 +114,17 @@ scalarField dMassDV(5, 0.0);
 Info<< "\nReading field U\n" << endl;
 volScalarField S
 (
-    IOobject
-    (
-        "S",
-        runTime.timeName(),
-        mesh,
-        IOobject::MUST_READ,
-        IOobject::AUTO_WRITE
-    ),
+    // IOobject
+    // (
+    //     "S",
+    //     runTime.timeName(),
+    //     mesh,
+    //     IOobject::MUST_READ,
+    //     IOobject::AUTO_WRITE
+    // ),
+    boyaoSub.fieldIOobject("S",mesh),
     mesh
 );
+
+scalar negativeValue = -10.0045784568277456;
+Info << "the magnitude of the negativeValue is " << mag(negativeValue) << nl;
