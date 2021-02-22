@@ -192,7 +192,7 @@ void Foam::ReactingMultiphaseParcel<ParcelType>::calc
     // Calc surface values
     scalar Ts, rhos, mus, Prs, kappas;
     this->calcSurfaceValues(cloud, td, T0, Ts, rhos, mus, Prs, kappas);
-    scalar Res = this->Re(rhos, U0, td.Uc(), d0, mus);
+    //scalar Res = this->Re(rhos, U0, td.Uc(), d0, mus);
 
     // This is added for TGA temerpature
     const scalar TPerMin = 2. ;// K/min
@@ -224,7 +224,7 @@ void Foam::ReactingMultiphaseParcel<ParcelType>::calc
     //~~~~~~~~
 
     // Explicit momentum source for particle
-    vector Su = Zero;
+    //vector Su = Zero;
 
     // Linearised momentum source coefficient
     scalar Spu = 0.0;
@@ -415,7 +415,7 @@ void Foam::ReactingMultiphaseParcel<ParcelType>::calc
 
     // Correct surface values due to emitted species
     this->correctSurfaceValues(cloud, td, Ts, Cs, rhos, mus, Prs, kappas);
-    Res = this->Re(rhos, U0, td.Uc(), this->d_, mus);
+    //Res = this->Re(rhos, U0, td.Uc(), this->d_, mus);
 
 
     // 3. Compute heat- and momentum transfers
