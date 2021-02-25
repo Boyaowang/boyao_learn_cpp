@@ -70,7 +70,13 @@ class ReactingMultiphaseParcel
 
         //- Size in bytes of the fields
         static const std::size_t sizeofFields_;
+        //
+        // This is added for TGA temerpature
+        // heating rate [K/min]
+        scalar TPerMin_;
 
+        // initial particle temperature [K]
+        scalar T_int_;
 
 public:
 
@@ -183,6 +189,8 @@ private:
             const scalarField& dMassSolid
         );
 
+        // read TGA setups
+        void readTGASetup(const polyMesh& mesh);
 
 protected:
 

@@ -79,7 +79,9 @@ inline Foam::ReactingMultiphaseParcel<ParcelType>::ReactingMultiphaseParcel
     YLiquid_(0),
     YSolid_(0),
     canCombust_(0)
-{}
+{
+   readTGASetup(mesh);
+}
 
 
 template<class ParcelType>
@@ -95,7 +97,9 @@ inline Foam::ReactingMultiphaseParcel<ParcelType>::ReactingMultiphaseParcel
     YLiquid_(0),
     YSolid_(0),
     canCombust_(0)
-{}
+{
+   readTGASetup(mesh);
+}
 
 
 template<class ParcelType>
@@ -143,7 +147,9 @@ inline Foam::ReactingMultiphaseParcel<ParcelType>::ReactingMultiphaseParcel
     YLiquid_(YLiquid0),
     YSolid_(YSolid0),
     canCombust_(0)
-{}
+{
+   readTGASetup(mesh);
+}
 
 
 // * * * * * * * * * constantProperties Member Functions * * * * * * * * * * //

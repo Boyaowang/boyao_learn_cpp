@@ -55,6 +55,9 @@ Foam::ReactingMultiphaseParcel<ParcelType>::ReactingMultiphaseParcel
     YSolid_(0),
     canCombust_(0)
 {
+
+  readTGASetup(mesh);
+
     if (readFields)
     {
         DynamicList<scalar> Yg;

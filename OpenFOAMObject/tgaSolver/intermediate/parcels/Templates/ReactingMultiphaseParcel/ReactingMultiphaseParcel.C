@@ -129,6 +129,30 @@ Foam::scalar Foam::ReactingMultiphaseParcel<ParcelType>::updateMassFractions
     return massNew;
 }
 
+template<class ParcelType>
+void Foam::ReactingMultiphaseParcel<ParcelType>::readTGASetup
+(
+  const polyMesh& mesh
+)
+{
+
+  IOdictionary TGAdict
+  (
+    IOobject
+    (
+      "TGASetup",
+      mesh.time().constant(),
+      mesh,
+      IOobject::MUST_READ_IF_MODIFIED,
+      IOobject::NO_WRITE
+    )
+  );
+
+  TGAdict.lookup("TPerMin")>>this->TPerMin_;
+  TGAdict.lookup("T_int")>>this->T_int_;
+
+}
+
 
 // * * * * * * * * * * *  Protected Member Functions * * * * * * * * * * * * //
 
@@ -194,30 +218,9 @@ void Foam::ReactingMultiphaseParcel<ParcelType>::calc
     this->calcSurfaceValues(cloud, td, T0, Ts, rhos, mus, Prs, kappas);
     //scalar Res = this->Re(rhos, U0, td.Uc(), d0, mus);
 
-    // This is added for TGA temerpature
-    const scalar TPerMin = 2. ;// K/min
-    const scalar T_int = 300. ;// K
+    //readTGASetup(cloud.mesh());
 
-    // if (this->age_<= 9.13e-3 && this->age_>= 0)
-    // {
-    //
-    // }
-    // else if (this->age_>= 9.13e-3 && this->age_<= 25.86e-3)
-    // {
-    //
-    // }
-    // else if (this->age_<= 100.0e-3 && this->age_>= 25.86e-3)
-    // {
-    //
-    // }
-    // else
-    // {
-    //     printf ("Particle temperature over range!!!");
-    //     exit(FatalError);
-    // }
-    // Info << "after over range " << nl;
-
-    scalar T_now = T_int + this->age_/60.*TPerMin;
+    scalar T_now = T_int_ + this->age_/60.*TPerMin_;
     Ts = T_now;
 
     // Sources
@@ -723,7 +726,9 @@ Foam::ReactingMultiphaseParcel<ParcelType>::ReactingMultiphaseParcel
     YLiquid_(p.YLiquid_),
     YSolid_(p.YSolid_),
     canCombust_(p.canCombust_)
-{}
+{
+  readTGASetup(p.mesh());
+}
 
 
 template<class ParcelType>
@@ -738,7 +743,9 @@ Foam::ReactingMultiphaseParcel<ParcelType>::ReactingMultiphaseParcel
     YLiquid_(p.YLiquid_),
     YSolid_(p.YSolid_),
     canCombust_(p.canCombust_)
-{}
+{
+  readTGASetup(mesh);
+}
 
 
 // * * * * * * * * * * * * * * IOStream operators  * * * * * * * * * * * * * //

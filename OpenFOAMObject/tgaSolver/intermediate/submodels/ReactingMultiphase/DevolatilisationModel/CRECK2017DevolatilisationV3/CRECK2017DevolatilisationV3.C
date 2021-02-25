@@ -77,7 +77,6 @@ residualCoeff_(readScalar(this->coeffDict().lookup("residualCoeff")))
     Info<< "Participating solid species:" << endl;
 
   // Determine mapping between active volatiles and cloud gas components
-  //  const label idGas = owner.composition().idGas();
     forAll(solidMolarMass_, i)
     {
       const word& specieName1 = solidMolarMass_[i].name();
@@ -175,6 +174,12 @@ void Foam::CRECK2017DevolatilisationV3<CloudType>::calculate
     forAll(solidStoiDatas_[i], j)
     {
       word productName = (solidStoiDatas_[i])[j].first();
+
+      if (productName == "Null")
+      {
+        break;
+      }
+
       label productId =
       this->owner().composition().localId(idSolid, productName);
 
@@ -196,6 +201,12 @@ void Foam::CRECK2017DevolatilisationV3<CloudType>::calculate
     forAll(gasStoiDatas_[i], j)
     {
       word productName = (gasStoiDatas_[i])[j].first();
+
+      if (productName == "Null")
+      {
+        break;
+      }
+
       label productId =
       this->owner().composition().localId(idGas, productName);
 

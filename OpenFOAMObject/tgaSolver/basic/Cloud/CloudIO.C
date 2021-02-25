@@ -151,6 +151,7 @@ Foam::Cloud<ParticleType>::Cloud
     polyMesh_(pMesh),
     globalPositionsPtr_()
 {
+  Info << "call Cloud constructor IO " << nl;
     checkPatches();
 
     polyMesh_.tetBasePtIs();
