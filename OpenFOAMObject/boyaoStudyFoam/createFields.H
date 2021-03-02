@@ -86,6 +86,14 @@ IOdictionary someProperties
     )
 );
 
+List<Tuple2<word, double>> initialList
+(
+  someProperties.lookup("initialFractions")
+);
+
+Info << "initialList is " << initialList <<nl;
+
+
 // List<word> boyaoSubPropertiesList
 // (
 //   someProperties.subDict("boyaoPropertiesList").toc()
