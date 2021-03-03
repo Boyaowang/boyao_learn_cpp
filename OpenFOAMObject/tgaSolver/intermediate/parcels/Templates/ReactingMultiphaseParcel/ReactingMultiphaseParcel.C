@@ -150,6 +150,7 @@ void Foam::ReactingMultiphaseParcel<ParcelType>::readTGASetup
 
   TGAdict.lookup("TPerMin")>>this->TPerMin_;
   TGAdict.lookup("T_int")>>this->T_int_;
+  TGAdict.lookup("Tlim")>>this->Tlim_;
 
 }
 
@@ -219,9 +220,16 @@ void Foam::ReactingMultiphaseParcel<ParcelType>::calc
     //scalar Res = this->Re(rhos, U0, td.Uc(), d0, mus);
 
     //readTGASetup(cloud.mesh());
-
-    scalar T_now = T_int_ + this->age_/60.*TPerMin_;
-    Ts = T_now;
+    scalar T_now;
+    if(T_int_ + this->age_/60.*TPerMin_ <= Tlim_)
+    {
+        T_now = T_int_ + this->age_/60.*TPerMin_;
+        Ts = T_now;
+    }else
+    {
+        Ts = Tlim_;
+        T_now = Tlim_;
+    }
 
     // Sources
     //~~~~~~~~

@@ -282,7 +282,6 @@ bool Foam::KinematicParcel<ParcelType>::move
     const scalar trackTime
 )
 {
-  Info << "call move function" << nl;
     typename TrackCloudType::parcelType& p =
         static_cast<typename TrackCloudType::parcelType&>(*this);
     typename TrackCloudType::parcelType::trackingData& ttd =

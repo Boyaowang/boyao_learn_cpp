@@ -33,6 +33,8 @@ Description
 #define CRECK2017DevolatilisationV3_H
 
 #include "DevolatilisationModel.H"
+#include <unordered_map>
+#include <map>
 
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 namespace Foam
@@ -62,6 +64,18 @@ class CRECK2017DevolatilisationV3
             //- List of molar mass of solid - (name, molar mass)
             List<solidMolarMass> solidMolarMass_;
 
+            //- Map of solid molar mass map
+            std::unordered_map<std::string,scalar> solidMolarMassMap_;
+
+            //- Map of gas molar mass map
+            std::unordered_map<std::string,scalar> gasMolarMassMap_;
+
+            //- Map of solid local id map
+            std::unordered_map<std::string,label> solidLocalIdMap_;
+
+            //- Map of gas local id map
+            std::unordered_map<std::string,label> gasLocalIdMap_;
+
             //- List of molar mass of gas - (name, molar mass)
             List<gasMolarMass> gasMolarMass_;
 
@@ -69,13 +83,24 @@ class CRECK2017DevolatilisationV3
             label reactionNum;
 
             typedef List<Tuple2<word, scalar>> wordScalarList;
+            
+            typedef List<Tuple2<label, scalar>> labelScalarList;
 
             //- List of solid stoichiomery -(name, stoi_)
             List<wordScalarList> solidStoiDatas_;
+            
+            //- List of id and stoi*molarMass (solid)
+            List<labelScalarList> solidStoiMolarmassDatas_;
 
             //- List of gas stoichiomery -(name, stoi_)
             List<wordScalarList> gasStoiDatas_;
-
+            
+            //- List of id and stoi*molarMass (gas)
+            List<labelScalarList> gasStoiMolarmassDatas_;
+            
+            //- List of id of reactants with molar Mass (name, molarMass)
+            labelScalarList reactantsIdMMList_;
+            
             // List of activation energy by reactions
             List<scalar> EaList;
 
@@ -151,6 +176,10 @@ public:
         (
           const fvMesh& mesh
         );
+
+        void printMap() const {
+          Info << "~~~~~~~~~~~~~~"<<solidMolarMassMap_.at("CELL") << nl;
+        }
 
 };
 

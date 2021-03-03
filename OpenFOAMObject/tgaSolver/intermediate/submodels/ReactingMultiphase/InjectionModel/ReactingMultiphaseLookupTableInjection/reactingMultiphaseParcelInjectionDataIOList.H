@@ -2,7 +2,7 @@
   =========                 |
   \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox
    \\    /   O peration     | Website:  https://openfoam.org
-    \\  /    A nd           | Copyright (C) 2011-2020 OpenFOAM Foundation
+    \\  /    A nd           | Copyright (C) 2011-2018 OpenFOAM Foundation
      \\/     M anipulation  |
 -------------------------------------------------------------------------------
 License
@@ -34,14 +34,14 @@ SourceFiles
 #ifndef reactingMultiphaseParcelInjectionDataIOList_H
 #define reactingMultiphaseParcelInjectionDataIOList_H
 
-#include "GlobalIOList.H"
+#include "IOList.H"
 #include "reactingMultiphaseParcelInjectionData.H"
 
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 
 namespace Foam
 {
-    typedef GlobalIOList<reactingMultiphaseParcelInjectionData>
+    typedef IOList<reactingMultiphaseParcelInjectionData>
         reactingMultiphaseParcelInjectionDataIOList;
 }
 

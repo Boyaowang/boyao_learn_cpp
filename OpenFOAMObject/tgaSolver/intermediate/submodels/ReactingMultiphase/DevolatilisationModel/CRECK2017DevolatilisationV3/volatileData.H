@@ -22,7 +22,7 @@ License
     along with OpenFOAM.  If not, see <http://www.gnu.org/licenses/>.
 
 Class
-    Foam::CRECK2017DevolatilisationV2
+    Foam::CRECK2017DevolatilisationV3::volatileData
 
 Description
 

@@ -7,13 +7,13 @@ EXE_INC = \
     -Iintermediate/lnInclude \
     -IcoalCombustion/lnInclude \
     -I$(LIB_SRC)/lagrangian/distributionModels/lnInclude \
-    -IthermophysicalModels/specie/lnInclude \
+    -I$(LIB_SRC)/thermophysicalModels/specie/lnInclude \
     -I$(LIB_SRC)/transportModels/compressible/lnInclude \
-    -IthermophysicalModels/basic/lnInclude \
-    -IthermophysicalModels/thermophysicalProperties/lnInclude \
-    -IthermophysicalModels/reactionThermo/lnInclude \
-    -IthermophysicalModels/SLGThermo/lnInclude \
-    -IthermophysicalModels/chemistryModel/lnInclude \
+    -I$(LIB_SRC)/thermophysicalModels/basic/lnInclude \
+    -I$(LIB_SRC)/thermophysicalModels/thermophysicalProperties/lnInclude \
+    -I$(LIB_SRC)/thermophysicalModels/reactionThermo/lnInclude \
+    -I$(LIB_SRC)/thermophysicalModels/SLGThermo/lnInclude \
+    -I$(LIB_SRC)/thermophysicalModels/chemistryModel/lnInclude \
     -I$(LIB_SRC)/radiationModels/lnInclude \
     -I$(LIB_SRC)/regionModels/regionModel/lnInclude \
     -I$(LIB_SRC)/regionModels/surfaceFilmModels/lnInclude \

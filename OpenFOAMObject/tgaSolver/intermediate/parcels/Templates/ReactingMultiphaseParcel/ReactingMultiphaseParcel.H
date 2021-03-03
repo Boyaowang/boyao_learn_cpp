@@ -78,6 +78,9 @@ class ReactingMultiphaseParcel
         // initial particle temperature [K]
         scalar T_int_;
 
+        // Highest temperature
+        scalar Tlim_;
+
 public:
 
     // IDs of phases in ReacingParcel phase list (Y)

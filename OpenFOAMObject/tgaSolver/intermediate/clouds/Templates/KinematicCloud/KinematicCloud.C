@@ -207,7 +207,7 @@ void Foam::KinematicCloud<CloudType>::evolveCloud
 
         // Assume that motion will update the cellOccupancy as necessary
         // before it is required.
-        cloud.motion(cloud, td);// called here
+        cloud.motion(cloud, td);
 
         stochasticCollision().update(td, solution_.trackTime());
     }
@@ -218,9 +218,7 @@ void Foam::KinematicCloud<CloudType>::evolveCloud
         injectors_.injectSteadyState(cloud, td, solution_.trackTime());
 
         td.part() = parcelType::trackingData::tpLinearTrack;
-
         CloudType::move(cloud, td, solution_.trackTime());
-
     }
 }
 
@@ -692,10 +690,8 @@ void Foam::KinematicCloud<CloudType>::motion
 )
 {
     td.part() = parcelType::trackingData::tpLinearTrack;
-    Info << "before call move" << nl;
-
     CloudType::move(cloud, td, solution_.trackTime());
-    Info << "after call move" << nl;
+
     updateCellOccupancy();
 }
 
