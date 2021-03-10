@@ -73,6 +73,7 @@ lnInclude/SingleKineticRateDevolatilisation.H \
 lnInclude/DiBlasiDevolatilisation.H \
 lnInclude/CRECK2017DevolatilisationV2.H \
 lnInclude/CRECK2017DevolatilisationV3.H \
+lnInclude/CRECK2017DevolatilisationV4.H \
 lnInclude/NoSurfaceReaction.H \
 $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/cloud.H \
 $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/IDLList.H \
@@ -204,6 +205,12 @@ lnInclude/gasMolarMass.H \
 lnInclude/volatileData.H \
 lnInclude/reactionStoi.H \
 lnInclude/CRECK2017DevolatilisationV3.C \
+lnInclude/readStoiV4.H \
+lnInclude/solidMolarMassV4.H \
+lnInclude/gasMolarMassV4.H \
+lnInclude/volatileDataV4.H \
+lnInclude/reactionStoiV4.H \
+lnInclude/CRECK2017DevolatilisationV4.C \
 lnInclude/SurfaceReactionModel.H \
 lnInclude/NoSurfaceReaction.C \
 $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/objectRegistry.H \
@@ -1099,6 +1106,7 @@ lnInclude/SingleKineticRateDevolatilisation.H :
 lnInclude/DiBlasiDevolatilisation.H :
 lnInclude/CRECK2017DevolatilisationV2.H :
 lnInclude/CRECK2017DevolatilisationV3.H :
+lnInclude/CRECK2017DevolatilisationV4.H :
 lnInclude/NoSurfaceReaction.H :
 $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/cloud.H :
 $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/IDLList.H :
@@ -1230,6 +1238,12 @@ lnInclude/gasMolarMass.H :
 lnInclude/volatileData.H :
 lnInclude/reactionStoi.H :
 lnInclude/CRECK2017DevolatilisationV3.C :
+lnInclude/readStoiV4.H :
+lnInclude/solidMolarMassV4.H :
+lnInclude/gasMolarMassV4.H :
+lnInclude/volatileDataV4.H :
+lnInclude/reactionStoiV4.H :
+lnInclude/CRECK2017DevolatilisationV4.C :
 lnInclude/SurfaceReactionModel.H :
 lnInclude/NoSurfaceReaction.C :
 $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/objectRegistry.H :
