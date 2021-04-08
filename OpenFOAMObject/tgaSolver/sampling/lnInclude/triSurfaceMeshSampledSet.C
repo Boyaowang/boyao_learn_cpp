@@ -1,1 +1,0 @@
-../sampledSet/triSurfaceMeshSampledSet/triSurfaceMeshSampledSet.C

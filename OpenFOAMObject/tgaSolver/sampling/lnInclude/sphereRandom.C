@@ -1,1 +1,0 @@
-../sampledSet/sphereRandom/sphereRandom.C

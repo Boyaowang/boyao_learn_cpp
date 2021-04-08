@@ -23,12 +23,12 @@ along with OpenFOAM.  If not, see <http://www.gnu.org/licenses/>.
 
 \*---------------------------------------------------------------------------*/
 
-#include "CRECK2017DevolatilisationV3.H"
+#include "CRECKDevolatilisationV4.H"
 
 // * * * * * * * * * * * * * * * * Constructors  * * * * * * * * * * * * * * //
 
 template<class CloudType>
-Foam::CRECK2017DevolatilisationV3<CloudType>::CRECK2017DevolatilisationV3
+Foam::CRECKDevolatilisationV4<CloudType>::CRECKDevolatilisationV4
 (
   const dictionary& dict,
   CloudType& owner
@@ -101,9 +101,9 @@ residualCoeff_(readScalar(this->coeffDict().lookup("residualCoeff")))
 
 
 template<class CloudType>
-Foam::CRECK2017DevolatilisationV3<CloudType>::CRECK2017DevolatilisationV3
+Foam::CRECKDevolatilisationV4<CloudType>::CRECKDevolatilisationV4
 (
-  const CRECK2017DevolatilisationV3<CloudType>& dm
+  const CRECKDevolatilisationV4<CloudType>& dm
 )
 :
 DevolatilisationModel<CloudType>(dm),
@@ -117,7 +117,7 @@ residualCoeff_(dm.residualCoeff_)
 // * * * * * * * * * * * * * * * * Destructor  * * * * * * * * * * * * * * * //
 
 template<class CloudType>
-Foam::CRECK2017DevolatilisationV3<CloudType>::~CRECK2017DevolatilisationV3()
+Foam::CRECKDevolatilisationV4<CloudType>::~CRECKDevolatilisationV4()
 {}
 
 // * * * * * * * * * * * * * * * Member Functions  * * * * * * * * * * * * * //
@@ -125,7 +125,7 @@ Foam::CRECK2017DevolatilisationV3<CloudType>::~CRECK2017DevolatilisationV3()
 // Main calculatioon function
 
 template<class CloudType>
-void Foam::CRECK2017DevolatilisationV3<CloudType>::calculate
+void Foam::CRECKDevolatilisationV4<CloudType>::calculate
 (
   const scalar dt,
   const scalar age,
@@ -140,19 +140,8 @@ void Foam::CRECK2017DevolatilisationV3<CloudType>::calculate
   scalarField& dMassSOLID
 ) const
 {
-
   scalar dmassSolid = 0.0;
-  // for competitive reactions
-  // scalar dmassSolid1 = 0.0;
-  // scalar dmassSolid2 = 0.0;
-  // scalar dmassSolid3 = 0.0;
-  //scalar dmassTot = 0.0;
-
   scalar kappa = 0.0;
-  // for competitive reactions
-  // scalar kappa1 = 0.0;
-  // scalar kappa2 = 0.0;
-  // scalar kappa3 = 0.0;
 
   scalar reactantMolarMass = 1.0;
   word reactantName;
@@ -174,129 +163,6 @@ void Foam::CRECK2017DevolatilisationV3<CloudType>::calculate
 
     // mole of reactant
     scalar moleReact = dmassSolid/reactantMolarMass;
-
-    // Because CELL, CELLA, HCE, and LIG have multi-steps reactions
-    // we have to make each of them react only once
-
-//     if(reactantName == "CELL" && reactantsList[i+1]=="CELL")
-//     {
-//         kappa1 = AList[i]*pow(T,bList[i])*exp(-EaList[i]*4184./(RR*T));
-//         kappa2 = AList[i+1]*pow(T,bList[i+1])*exp(-EaList[i+1]*4184./(RR*T));
-//         dmassSolid1 = dt*kappa1*mass*YSolidEff[idReactants];
-//         dmassSolid2 = dt*kappa2*mass*YSolidEff[idReactants];
-//         dmassTot = dmassSolid1 + dmassSolid2;
-//         Info << "check " << reactantName << " " << reactantsList[i+1] << nl;
-//
-//         if(dmassTot >= mass*YSolidEff[idReactants])
-//         {
-//             dmassSolid = mass*YSolidEff[idReactants]*dmassSolid1/(dmassTot+ rootVSmall);
-//         }
-//
-//     }
-//
-//     if(reactantName == "CELL" && reactantsList[i-1]=="CELL")
-//     {
-//         kappa1 = AList[i]*pow(T,bList[i])*exp(-EaList[i]*4184./(RR*T));
-//         kappa2 = AList[i-1]*pow(T,bList[i-1])*exp(-EaList[i-1]*4184./(RR*T));
-//         dmassSolid1 = dt*kappa1*mass*YSolidEff[idReactants];
-//         dmassSolid2 = dt*kappa2*mass*YSolidEff[idReactants];
-//         dmassTot = dmassSolid1 + dmassSolid2+ rootVSmall;
-//         Info << "check " << reactantName << " " << reactantsList[i-1] << nl;
-//
-//         if(dmassTot >= mass*YSolidEff[idReactants])
-//         {
-//             dmassSolid = mass*YSolidEff[idReactants]*dmassSolid1/(dmassTot+ rootVSmall);
-//         }
-//     }
-//
-//     if(reactantName == "CELLA" && reactantsList[i+1]=="CELLA")
-//     {
-//         kappa1 = AList[i]*pow(T,bList[i])*exp(-EaList[i]*4184./(RR*T));
-//         kappa2 = AList[i+1]*pow(T,bList[i+1])*exp(-EaList[i+1]*4184./(RR*T));
-//         dmassSolid1 = dt*kappa1*mass*YSolidEff[idReactants];
-//         dmassSolid2 = dt*kappa2*mass*YSolidEff[idReactants];
-//         dmassTot = dmassSolid1 + dmassSolid2+ rootVSmall;
-//         Info << "check " << reactantName << " " << reactantsList[i+1] << nl;
-//
-//         if(dmassTot >= mass*YSolidEff[idReactants])
-//         {
-//             dmassSolid = mass*YSolidEff[idReactants]*dmassSolid1/(dmassTot+ rootVSmall);
-//         }
-//
-//     }
-//
-//     if(reactantName == "CELLA" && reactantsList[i-1]=="CELLA")
-//     {
-//         kappa1 = AList[i]*pow(T,bList[i])*exp(-EaList[i]*4184./(RR*T));
-//         kappa2 = AList[i-1]*pow(T,bList[i-1])*exp(-EaList[i-1]*4184./(RR*T));
-//         dmassSolid1 = dt*kappa1*mass*YSolidEff[idReactants];
-//         dmassSolid2 = dt*kappa2*mass*YSolidEff[idReactants];
-//         dmassTot = dmassSolid1 + dmassSolid2 + rootVSmall;
-//         Info << "check " << reactantName << " " << reactantsList[i-1] << nl;
-//
-//         if(dmassTot >= mass*YSolidEff[idReactants])
-//         {
-//             dmassSolid = mass*YSolidEff[idReactants]*dmassSolid1/(dmassTot+ rootVSmall);
-//         }
-//     }
-//
-//
-//     if(reactantName == "LIG" && reactantsList[i+1]=="LIG" && reactantsList[i+2]=="LIG")
-//     {
-//         kappa1 = AList[i]*pow(T,bList[i])*exp(-EaList[i]*4184./(RR*T));
-//         kappa2 = AList[i+1]*pow(T,bList[i+1])*exp(-EaList[i+1]*4184./(RR*T));
-//         kappa3 = AList[i+2]*pow(T,bList[i+2])*exp(-EaList[i+2]*4184./(RR*T));
-//         dmassSolid1 = dt*kappa1*mass*YSolidEff[idReactants];
-//         dmassSolid2 = dt*kappa2*mass*YSolidEff[idReactants];
-//         dmassSolid3 = dt*kappa3*mass*YSolidEff[idReactants];
-//         dmassTot = dmassSolid1 + dmassSolid2+ dmassSolid3+ rootVSmall;
-//         Info << "check " << reactantName << " " << reactantsList[i+1]
-//         << " " << reactantsList[i+2]  << nl;
-//
-//         if(dmassTot >= mass*YSolidEff[idReactants])
-//         {
-//             dmassSolid = mass*YSolidEff[idReactants]*dmassSolid1/(dmassTot+ rootVSmall);
-//         }
-//
-//     }
-//
-//     if(reactantName == "LIG" && reactantsList[i-1]=="LIG" && reactantsList[i+1]=="LIG")
-//     {
-//         kappa1 = AList[i]*pow(T,bList[i])*exp(-EaList[i]*4184./(RR*T));
-//         kappa2 = AList[i-1]*pow(T,bList[i-1])*exp(-EaList[i-1]*4184./(RR*T));
-//         kappa3 = AList[i+1]*pow(T,bList[i+1])*exp(-EaList[i+1]*4184./(RR*T));
-//         dmassSolid1 = dt*kappa1*mass*YSolidEff[idReactants];
-//         dmassSolid2 = dt*kappa2*mass*YSolidEff[idReactants];
-//         dmassSolid3 = dt*kappa3*mass*YSolidEff[idReactants];
-//         dmassTot = dmassSolid1 + dmassSolid2+ dmassSolid3+ rootVSmall;
-//         Info << "check " << reactantName << " " << reactantsList[i-1]
-//         << " " << reactantsList[i+1]  << nl;
-//
-//         if(dmassTot >= mass*YSolidEff[idReactants])
-//         {
-//             dmassSolid = mass*YSolidEff[idReactants]*dmassSolid1/(dmassTot+ rootVSmall);
-//         }
-//
-//     }
-//
-//     if(reactantName == "LIG" && reactantsList[i-1]=="LIG" && reactantsList[i-2]=="LIG")
-//     {
-//         kappa1 = AList[i]*pow(T,bList[i])*exp(-EaList[i]*4184./(RR*T));
-//         kappa2 = AList[i-1]*pow(T,bList[i-1])*exp(-EaList[i-1]*4184./(RR*T));
-//         kappa3 = AList[i-2]*pow(T,bList[i-2])*exp(-EaList[i-2]*4184./(RR*T));
-//         dmassSolid1 = dt*kappa1*mass*YSolidEff[idReactants];
-//         dmassSolid2 = dt*kappa2*mass*YSolidEff[idReactants];
-//         dmassSolid3 = dt*kappa3*mass*YSolidEff[idReactants];
-//         dmassTot = dmassSolid1 + dmassSolid2+ dmassSolid3+ rootVSmall;
-//         Info << "check " << reactantName << " " << reactantsList[i-1]
-//         << " " << reactantsList[i-2]  << nl;
-//
-//         if(dmassTot >= mass*YSolidEff[idReactants])
-//         {
-//             dmassSolid = mass*YSolidEff[idReactants]*dmassSolid1/(dmassTot+ rootVSmall);
-//         }
-//
-//     }
 
 
     // reactants reduce
@@ -347,7 +213,7 @@ void Foam::CRECK2017DevolatilisationV3<CloudType>::calculate
 
 // read reaction data from constant folder
 template<class CloudType>
-void Foam::CRECK2017DevolatilisationV3<CloudType>::readReactionDict
+void Foam::CRECKDevolatilisationV4<CloudType>::readReactionDict
 (
   const fvMesh& mesh
 )
@@ -365,6 +231,7 @@ void Foam::CRECK2017DevolatilisationV3<CloudType>::readReactionDict
     )
   );
 
+  // number of reaction steps
   reactionNum = reactionDict_.size();
 
   word reactionNameTest;
@@ -422,17 +289,15 @@ void Foam::CRECK2017DevolatilisationV3<CloudType>::readReactionDict
     }
 
     // Build solid localId map
-    const label idS = this->owner().composition().idSolid();
+    const label idS = this->owner().composition().idSolid(); // phase Id
     List<word> solidNames =
     this->owner().composition().phaseProps()[idS].names();
 
     forAll(solidNames, i)
     {
       solidLocalIdMap_[solidNames[i]] =
-      this->owner().composition().localId(idS, solidNames[i]);
+      this->owner().composition().localId(idS, solidNames[i]); // species Id
     }
-
-
 
     // Build gas localId map
     const label idG = this->owner().composition().idGas();
@@ -452,7 +317,9 @@ void Foam::CRECK2017DevolatilisationV3<CloudType>::readReactionDict
     forAll(solidStoiDatas_,i)
     {
         List<Tuple2<label,scalar>> IdAndstoiMm;
-        forAll(solidStoiDatas_[i], j) // loop List of Tuple<word, scalar>
+        // loop List of Tuple<word, scalar>
+        // solidStoiDatas_[i] has type List<Tuple<word, scalar>>
+        forAll(solidStoiDatas_[i], j)
         {
             const word solidName = solidStoiDatas_[i][j].first();
 

@@ -1,1 +1,0 @@
-../sampledSet/lineFace/lineFace.H

@@ -1,1 +1,0 @@
-../sampledSurface/writers/none/noSurfaceWriter.H

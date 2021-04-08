@@ -1,1 +1,0 @@
-../sampledSurface/writers/foam/foamSurfaceWriter.H
