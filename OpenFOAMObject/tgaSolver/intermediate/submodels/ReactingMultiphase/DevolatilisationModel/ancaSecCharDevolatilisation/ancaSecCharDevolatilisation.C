@@ -275,7 +275,7 @@ void Foam::ancaSecCharDevolatilisation<CloudType>::readReactionDict
     forAll(primarySolidStoiData_, i)
     {
       // calculate the x * stoi
-      scalar xTimesStoi = primarySolidStoiData_[i].second()*xCoeff;
+      scalar xTimesStoi = primarySolidStoiData_[i].second()*(1-xCoeff);
       // pack the name and the x * stoi
       Tuple2<word, scalar>
       nameAndxTimesStoi(primarySolidStoiData_[i].first(), xTimesStoi);
@@ -289,7 +289,7 @@ void Foam::ancaSecCharDevolatilisation<CloudType>::readReactionDict
     forAll(primaryGasStoiData_, i)
     {
       // calculate the x * stoi
-      scalar xTimesStoi = primaryGasStoiData_[i].second()*xCoeff;
+      scalar xTimesStoi = primaryGasStoiData_[i].second()*(1-xCoeff);
       // pack the name and the x * stoi
       Tuple2<word,scalar>
       nameAndxTimesStoi(primaryGasStoiData_[i].first(), xTimesStoi);
@@ -315,7 +315,7 @@ void Foam::ancaSecCharDevolatilisation<CloudType>::readReactionDict
     forAll(secondarySolidStoiData_, i)
     {
       // calculate the x * stoi
-      scalar xTimesStoi = secondarySolidStoiData_[i].second()*(1-xCoeff);
+      scalar xTimesStoi = secondarySolidStoiData_[i].second()*xCoeff;
       // pack the name and the x * stoi
       Tuple2<word, scalar>
       nameAndxTimesStoi(secondarySolidStoiData_[i].first(), xTimesStoi);
@@ -329,7 +329,7 @@ void Foam::ancaSecCharDevolatilisation<CloudType>::readReactionDict
     forAll(secondaryGasStoiData_, i)
     {
       // calculate the x * stoi
-      scalar xTimesStoi = secondaryGasStoiData_[i].second()*(1-xCoeff);
+      scalar xTimesStoi = secondaryGasStoiData_[i].second()*xCoeff;
       // pack the name and the x * stoi
       Tuple2<word,scalar>
       nameAndxTimesStoi(secondaryGasStoiData_[i].first(), xTimesStoi);
@@ -516,7 +516,7 @@ void Foam::ancaSecCharDevolatilisation<CloudType>::readReactionDict
 
     gasStoiMolarmassDatas_.append(IdAndstoiMm);
   }
-  
+
   //buid reactantsIdMMList
   for (label i = 0; i < reactionNum; i++)
   {
