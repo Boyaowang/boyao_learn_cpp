@@ -5,7 +5,6 @@ wclean libso basic
 wclean libso fvOptions
 wclean libso sampling
 wclean libso solidParticle
-wclean libso thermophysicalModels
 wclean libso coalCombustion
 wclean libso intermediate
 wclean libso turbulence

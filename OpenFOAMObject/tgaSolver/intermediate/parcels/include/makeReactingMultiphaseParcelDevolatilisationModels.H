@@ -35,6 +35,7 @@ License
 #include "CRECK2017DevolatilisationV2.H"
 #include "CRECK2017DevolatilisationV3.H"
 #include "CRECKDevolatilisationV4.H"
+#include "ancaSecCharDevolatilisation.H"
 
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 
@@ -51,7 +52,8 @@ License
     makeDevolatilisationModelType(DiBlasiDevolatilisation, CloudType);         \
     makeDevolatilisationModelType(CRECK2017DevolatilisationV2, CloudType);     \
     makeDevolatilisationModelType(CRECK2017DevolatilisationV3, CloudType);     \
-    makeDevolatilisationModelType(CRECKDevolatilisationV4, CloudType);
+    makeDevolatilisationModelType(CRECKDevolatilisationV4, CloudType);         \
+    makeDevolatilisationModelType(ancaSecCharDevolatilisation, CloudType);
 
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 
