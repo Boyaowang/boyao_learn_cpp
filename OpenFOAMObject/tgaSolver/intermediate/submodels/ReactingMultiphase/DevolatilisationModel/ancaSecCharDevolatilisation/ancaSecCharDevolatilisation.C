@@ -154,8 +154,8 @@ void Foam::ancaSecCharDevolatilisation<CloudType>::calculate
     //const label idReactants = solidLocalIdMap_.at(reactantName);
 
     const label idReactants = reactantsIdMMList_[i].first();
-    //kJ/mol -> J/mol so times 1000
-    kappa = AList[i]*pow(T,bList[i])*exp(-EaList[i]*1000./(RR*T));
+    //kJ/mol -> J/mol so times 1000000
+    kappa = AList[i]*pow(T,bList[i])*exp(-EaList[i]*1000000./(RR*T));
 
     dmassSolid = dt*kappa*mass*YSolidEff[idReactants];
 
