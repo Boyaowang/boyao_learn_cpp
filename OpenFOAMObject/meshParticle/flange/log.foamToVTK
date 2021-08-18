@@ -1,0 +1,401 @@
+/*---------------------------------------------------------------------------*\
+  =========                 |
+  \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox
+   \\    /   O peration     | Website:  https://openfoam.org
+    \\  /    A nd           | Version:  6
+     \\/     M anipulation  |
+\*---------------------------------------------------------------------------*/
+Build  : 6-47517f2ebb1b
+Exec   : foamToVTK
+Date   : Jun 21 2021
+Time   : 10:46:53
+Host   : "boyao-desktop"
+PID    : 310220
+I/O    : uncollated
+Case   : /home/boyao/C++/OpenFOAMObject/meshParticle/flange
+nProcs : 1
+sigFpe : Enabling floating point exception trapping (FOAM_SIGFPE).
+fileModificationChecking : Monitoring run-time modified files using timeStampMaster (fileModificationSkew 10)
+allowSystemOperations : Allowing user-supplied system call operations
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+Create time
+
+Create mesh for time = 0
+
+Time: 0
+    volScalarFields            : T
+
+    Internal  : "/home/boyao/C++/OpenFOAMObject/meshParticle/flange/VTK/flange_0.vtk"
+    Original cells:5712 points:7189   Additional cells:0  additional points:0
+
+    Patch     : "/home/boyao/C++/OpenFOAMObject/meshParticle/flange/VTK/patch1/patch1_0.vtk"
+    Patch     : "/home/boyao/C++/OpenFOAMObject/meshParticle/flange/VTK/patch2/patch2_0.vtk"
+    Patch     : "/home/boyao/C++/OpenFOAMObject/meshParticle/flange/VTK/patch3/patch3_0.vtk"
+    Patch     : "/home/boyao/C++/OpenFOAMObject/meshParticle/flange/VTK/patch4/patch4_0.vtk"
+    FaceZone  : "/home/boyao/C++/OpenFOAMObject/meshParticle/flange/VTK/patch1/patch1_0.vtk"
+    FaceZone  : "/home/boyao/C++/OpenFOAMObject/meshParticle/flange/VTK/patch2/patch2_0.vtk"
+    FaceZone  : "/home/boyao/C++/OpenFOAMObject/meshParticle/flange/VTK/patch3/patch3_0.vtk"
+    FaceZone  : "/home/boyao/C++/OpenFOAMObject/meshParticle/flange/VTK/patch4/patch4_0.vtk"
+Time: 0.1
+    volScalarFields            : gradTy gradTx T gradTz
+
+    Internal  : "/home/boyao/C++/OpenFOAMObject/meshParticle/flange/VTK/flange_20.vtk"
+    Patch     : "/home/boyao/C++/OpenFOAMObject/meshParticle/flange/VTK/patch1/patch1_20.vtk"
+    Patch     : "/home/boyao/C++/OpenFOAMObject/meshParticle/flange/VTK/patch2/patch2_20.vtk"
+    Patch     : "/home/boyao/C++/OpenFOAMObject/meshParticle/flange/VTK/patch3/patch3_20.vtk"
+    Patch     : "/home/boyao/C++/OpenFOAMObject/meshParticle/flange/VTK/patch4/patch4_20.vtk"
+    FaceZone  : "/home/boyao/C++/OpenFOAMObject/meshParticle/flange/VTK/patch1/patch1_20.vtk"
+    FaceZone  : "/home/boyao/C++/OpenFOAMObject/meshParticle/flange/VTK/patch2/patch2_20.vtk"
+    FaceZone  : "/home/boyao/C++/OpenFOAMObject/meshParticle/flange/VTK/patch3/patch3_20.vtk"
+    FaceZone  : "/home/boyao/C++/OpenFOAMObject/meshParticle/flange/VTK/patch4/patch4_20.vtk"
+Time: 0.2
+    volScalarFields            : gradTy gradTx T gradTz
+
+    Internal  : "/home/boyao/C++/OpenFOAMObject/meshParticle/flange/VTK/flange_40.vtk"
+    Patch     : "/home/boyao/C++/OpenFOAMObject/meshParticle/flange/VTK/patch1/patch1_40.vtk"
+    Patch     : "/home/boyao/C++/OpenFOAMObject/meshParticle/flange/VTK/patch2/patch2_40.vtk"
+    Patch     : "/home/boyao/C++/OpenFOAMObject/meshParticle/flange/VTK/patch3/patch3_40.vtk"
+    Patch     : "/home/boyao/C++/OpenFOAMObject/meshParticle/flange/VTK/patch4/patch4_40.vtk"
+    FaceZone  : "/home/boyao/C++/OpenFOAMObject/meshParticle/flange/VTK/patch1/patch1_40.vtk"
+    FaceZone  : "/home/boyao/C++/OpenFOAMObject/meshParticle/flange/VTK/patch2/patch2_40.vtk"
+    FaceZone  : "/home/boyao/C++/OpenFOAMObject/meshParticle/flange/VTK/patch3/patch3_40.vtk"
+    FaceZone  : "/home/boyao/C++/OpenFOAMObject/meshParticle/flange/VTK/patch4/patch4_40.vtk"
+Time: 0.3
+    volScalarFields            : gradTy gradTx T gradTz
+
+    Internal  : "/home/boyao/C++/OpenFOAMObject/meshParticle/flange/VTK/flange_60.vtk"
+    Patch     : "/home/boyao/C++/OpenFOAMObject/meshParticle/flange/VTK/patch1/patch1_60.vtk"
+    Patch     : "/home/boyao/C++/OpenFOAMObject/meshParticle/flange/VTK/patch2/patch2_60.vtk"
+    Patch     : "/home/boyao/C++/OpenFOAMObject/meshParticle/flange/VTK/patch3/patch3_60.vtk"
+    Patch     : "/home/boyao/C++/OpenFOAMObject/meshParticle/flange/VTK/patch4/patch4_60.vtk"
+    FaceZone  : "/home/boyao/C++/OpenFOAMObject/meshParticle/flange/VTK/patch1/patch1_60.vtk"
+    FaceZone  : "/home/boyao/C++/OpenFOAMObject/meshParticle/flange/VTK/patch2/patch2_60.vtk"
+    FaceZone  : "/home/boyao/C++/OpenFOAMObject/meshParticle/flange/VTK/patch3/patch3_60.vtk"
+    FaceZone  : "/home/boyao/C++/OpenFOAMObject/meshParticle/flange/VTK/patch4/patch4_60.vtk"
+Time: 0.4
+    volScalarFields            : gradTy gradTx T gradTz
+
+    Internal  : "/home/boyao/C++/OpenFOAMObject/meshParticle/flange/VTK/flange_80.vtk"
+    Patch     : "/home/boyao/C++/OpenFOAMObject/meshParticle/flange/VTK/patch1/patch1_80.vtk"
+    Patch     : "/home/boyao/C++/OpenFOAMObject/meshParticle/flange/VTK/patch2/patch2_80.vtk"
+    Patch     : "/home/boyao/C++/OpenFOAMObject/meshParticle/flange/VTK/patch3/patch3_80.vtk"
+    Patch     : "/home/boyao/C++/OpenFOAMObject/meshParticle/flange/VTK/patch4/patch4_80.vtk"
+    FaceZone  : "/home/boyao/C++/OpenFOAMObject/meshParticle/flange/VTK/patch1/patch1_80.vtk"
+    FaceZone  : "/home/boyao/C++/OpenFOAMObject/meshParticle/flange/VTK/patch2/patch2_80.vtk"
+    FaceZone  : "/home/boyao/C++/OpenFOAMObject/meshParticle/flange/VTK/patch3/patch3_80.vtk"
+    FaceZone  : "/home/boyao/C++/OpenFOAMObject/meshParticle/flange/VTK/patch4/patch4_80.vtk"
+Time: 0.5
+    volScalarFields            : gradTy gradTx T gradTz
+
+    Internal  : "/home/boyao/C++/OpenFOAMObject/meshParticle/flange/VTK/flange_100.vtk"
+    Patch     : "/home/boyao/C++/OpenFOAMObject/meshParticle/flange/VTK/patch1/patch1_100.vtk"
+    Patch     : "/home/boyao/C++/OpenFOAMObject/meshParticle/flange/VTK/patch2/patch2_100.vtk"
+    Patch     : "/home/boyao/C++/OpenFOAMObject/meshParticle/flange/VTK/patch3/patch3_100.vtk"
+    Patch     : "/home/boyao/C++/OpenFOAMObject/meshParticle/flange/VTK/patch4/patch4_100.vtk"
+    FaceZone  : "/home/boyao/C++/OpenFOAMObject/meshParticle/flange/VTK/patch1/patch1_100.vtk"
+    FaceZone  : "/home/boyao/C++/OpenFOAMObject/meshParticle/flange/VTK/patch2/patch2_100.vtk"
+    FaceZone  : "/home/boyao/C++/OpenFOAMObject/meshParticle/flange/VTK/patch3/patch3_100.vtk"
+    FaceZone  : "/home/boyao/C++/OpenFOAMObject/meshParticle/flange/VTK/patch4/patch4_100.vtk"
+Time: 0.6
+    volScalarFields            : gradTy gradTx T gradTz
+
+    Internal  : "/home/boyao/C++/OpenFOAMObject/meshParticle/flange/VTK/flange_120.vtk"
+    Patch     : "/home/boyao/C++/OpenFOAMObject/meshParticle/flange/VTK/patch1/patch1_120.vtk"
+    Patch     : "/home/boyao/C++/OpenFOAMObject/meshParticle/flange/VTK/patch2/patch2_120.vtk"
+    Patch     : "/home/boyao/C++/OpenFOAMObject/meshParticle/flange/VTK/patch3/patch3_120.vtk"
+    Patch     : "/home/boyao/C++/OpenFOAMObject/meshParticle/flange/VTK/patch4/patch4_120.vtk"
+    FaceZone  : "/home/boyao/C++/OpenFOAMObject/meshParticle/flange/VTK/patch1/patch1_120.vtk"
+    FaceZone  : "/home/boyao/C++/OpenFOAMObject/meshParticle/flange/VTK/patch2/patch2_120.vtk"
+    FaceZone  : "/home/boyao/C++/OpenFOAMObject/meshParticle/flange/VTK/patch3/patch3_120.vtk"
+    FaceZone  : "/home/boyao/C++/OpenFOAMObject/meshParticle/flange/VTK/patch4/patch4_120.vtk"
+Time: 0.7
+    volScalarFields            : gradTy gradTx T gradTz
+
+    Internal  : "/home/boyao/C++/OpenFOAMObject/meshParticle/flange/VTK/flange_140.vtk"
+    Patch     : "/home/boyao/C++/OpenFOAMObject/meshParticle/flange/VTK/patch1/patch1_140.vtk"
+    Patch     : "/home/boyao/C++/OpenFOAMObject/meshParticle/flange/VTK/patch2/patch2_140.vtk"
+    Patch     : "/home/boyao/C++/OpenFOAMObject/meshParticle/flange/VTK/patch3/patch3_140.vtk"
+    Patch     : "/home/boyao/C++/OpenFOAMObject/meshParticle/flange/VTK/patch4/patch4_140.vtk"
+    FaceZone  : "/home/boyao/C++/OpenFOAMObject/meshParticle/flange/VTK/patch1/patch1_140.vtk"
+    FaceZone  : "/home/boyao/C++/OpenFOAMObject/meshParticle/flange/VTK/patch2/patch2_140.vtk"
+    FaceZone  : "/home/boyao/C++/OpenFOAMObject/meshParticle/flange/VTK/patch3/patch3_140.vtk"
+    FaceZone  : "/home/boyao/C++/OpenFOAMObject/meshParticle/flange/VTK/patch4/patch4_140.vtk"
+Time: 0.8
+    volScalarFields            : gradTy gradTx T gradTz
+
+    Internal  : "/home/boyao/C++/OpenFOAMObject/meshParticle/flange/VTK/flange_160.vtk"
+    Patch     : "/home/boyao/C++/OpenFOAMObject/meshParticle/flange/VTK/patch1/patch1_160.vtk"
+    Patch     : "/home/boyao/C++/OpenFOAMObject/meshParticle/flange/VTK/patch2/patch2_160.vtk"
+    Patch     : "/home/boyao/C++/OpenFOAMObject/meshParticle/flange/VTK/patch3/patch3_160.vtk"
+    Patch     : "/home/boyao/C++/OpenFOAMObject/meshParticle/flange/VTK/patch4/patch4_160.vtk"
+    FaceZone  : "/home/boyao/C++/OpenFOAMObject/meshParticle/flange/VTK/patch1/patch1_160.vtk"
+    FaceZone  : "/home/boyao/C++/OpenFOAMObject/meshParticle/flange/VTK/patch2/patch2_160.vtk"
+    FaceZone  : "/home/boyao/C++/OpenFOAMObject/meshParticle/flange/VTK/patch3/patch3_160.vtk"
+    FaceZone  : "/home/boyao/C++/OpenFOAMObject/meshParticle/flange/VTK/patch4/patch4_160.vtk"
+Time: 0.9
+    volScalarFields            : gradTy gradTx T gradTz
+
+    Internal  : "/home/boyao/C++/OpenFOAMObject/meshParticle/flange/VTK/flange_180.vtk"
+    Patch     : "/home/boyao/C++/OpenFOAMObject/meshParticle/flange/VTK/patch1/patch1_180.vtk"
+    Patch     : "/home/boyao/C++/OpenFOAMObject/meshParticle/flange/VTK/patch2/patch2_180.vtk"
+    Patch     : "/home/boyao/C++/OpenFOAMObject/meshParticle/flange/VTK/patch3/patch3_180.vtk"
+    Patch     : "/home/boyao/C++/OpenFOAMObject/meshParticle/flange/VTK/patch4/patch4_180.vtk"
+    FaceZone  : "/home/boyao/C++/OpenFOAMObject/meshParticle/flange/VTK/patch1/patch1_180.vtk"
+    FaceZone  : "/home/boyao/C++/OpenFOAMObject/meshParticle/flange/VTK/patch2/patch2_180.vtk"
+    FaceZone  : "/home/boyao/C++/OpenFOAMObject/meshParticle/flange/VTK/patch3/patch3_180.vtk"
+    FaceZone  : "/home/boyao/C++/OpenFOAMObject/meshParticle/flange/VTK/patch4/patch4_180.vtk"
+Time: 1
+    volScalarFields            : gradTy gradTx T gradTz
+
+    Internal  : "/home/boyao/C++/OpenFOAMObject/meshParticle/flange/VTK/flange_200.vtk"
+    Patch     : "/home/boyao/C++/OpenFOAMObject/meshParticle/flange/VTK/patch1/patch1_200.vtk"
+    Patch     : "/home/boyao/C++/OpenFOAMObject/meshParticle/flange/VTK/patch2/patch2_200.vtk"
+    Patch     : "/home/boyao/C++/OpenFOAMObject/meshParticle/flange/VTK/patch3/patch3_200.vtk"
+    Patch     : "/home/boyao/C++/OpenFOAMObject/meshParticle/flange/VTK/patch4/patch4_200.vtk"
+    FaceZone  : "/home/boyao/C++/OpenFOAMObject/meshParticle/flange/VTK/patch1/patch1_200.vtk"
+    FaceZone  : "/home/boyao/C++/OpenFOAMObject/meshParticle/flange/VTK/patch2/patch2_200.vtk"
+    FaceZone  : "/home/boyao/C++/OpenFOAMObject/meshParticle/flange/VTK/patch3/patch3_200.vtk"
+    FaceZone  : "/home/boyao/C++/OpenFOAMObject/meshParticle/flange/VTK/patch4/patch4_200.vtk"
+Time: 1.1
+    volScalarFields            : gradTy gradTx T gradTz
+
+    Internal  : "/home/boyao/C++/OpenFOAMObject/meshParticle/flange/VTK/flange_220.vtk"
+    Patch     : "/home/boyao/C++/OpenFOAMObject/meshParticle/flange/VTK/patch1/patch1_220.vtk"
+    Patch     : "/home/boyao/C++/OpenFOAMObject/meshParticle/flange/VTK/patch2/patch2_220.vtk"
+    Patch     : "/home/boyao/C++/OpenFOAMObject/meshParticle/flange/VTK/patch3/patch3_220.vtk"
+    Patch     : "/home/boyao/C++/OpenFOAMObject/meshParticle/flange/VTK/patch4/patch4_220.vtk"
+    FaceZone  : "/home/boyao/C++/OpenFOAMObject/meshParticle/flange/VTK/patch1/patch1_220.vtk"
+    FaceZone  : "/home/boyao/C++/OpenFOAMObject/meshParticle/flange/VTK/patch2/patch2_220.vtk"
+    FaceZone  : "/home/boyao/C++/OpenFOAMObject/meshParticle/flange/VTK/patch3/patch3_220.vtk"
+    FaceZone  : "/home/boyao/C++/OpenFOAMObject/meshParticle/flange/VTK/patch4/patch4_220.vtk"
+Time: 1.2
+    volScalarFields            : gradTy gradTx T gradTz
+
+    Internal  : "/home/boyao/C++/OpenFOAMObject/meshParticle/flange/VTK/flange_240.vtk"
+    Patch     : "/home/boyao/C++/OpenFOAMObject/meshParticle/flange/VTK/patch1/patch1_240.vtk"
+    Patch     : "/home/boyao/C++/OpenFOAMObject/meshParticle/flange/VTK/patch2/patch2_240.vtk"
+    Patch     : "/home/boyao/C++/OpenFOAMObject/meshParticle/flange/VTK/patch3/patch3_240.vtk"
+    Patch     : "/home/boyao/C++/OpenFOAMObject/meshParticle/flange/VTK/patch4/patch4_240.vtk"
+    FaceZone  : "/home/boyao/C++/OpenFOAMObject/meshParticle/flange/VTK/patch1/patch1_240.vtk"
+    FaceZone  : "/home/boyao/C++/OpenFOAMObject/meshParticle/flange/VTK/patch2/patch2_240.vtk"
+    FaceZone  : "/home/boyao/C++/OpenFOAMObject/meshParticle/flange/VTK/patch3/patch3_240.vtk"
+    FaceZone  : "/home/boyao/C++/OpenFOAMObject/meshParticle/flange/VTK/patch4/patch4_240.vtk"
+Time: 1.3
+    volScalarFields            : gradTy gradTx T gradTz
+
+    Internal  : "/home/boyao/C++/OpenFOAMObject/meshParticle/flange/VTK/flange_260.vtk"
+    Patch     : "/home/boyao/C++/OpenFOAMObject/meshParticle/flange/VTK/patch1/patch1_260.vtk"
+    Patch     : "/home/boyao/C++/OpenFOAMObject/meshParticle/flange/VTK/patch2/patch2_260.vtk"
+    Patch     : "/home/boyao/C++/OpenFOAMObject/meshParticle/flange/VTK/patch3/patch3_260.vtk"
+    Patch     : "/home/boyao/C++/OpenFOAMObject/meshParticle/flange/VTK/patch4/patch4_260.vtk"
+    FaceZone  : "/home/boyao/C++/OpenFOAMObject/meshParticle/flange/VTK/patch1/patch1_260.vtk"
+    FaceZone  : "/home/boyao/C++/OpenFOAMObject/meshParticle/flange/VTK/patch2/patch2_260.vtk"
+    FaceZone  : "/home/boyao/C++/OpenFOAMObject/meshParticle/flange/VTK/patch3/patch3_260.vtk"
+    FaceZone  : "/home/boyao/C++/OpenFOAMObject/meshParticle/flange/VTK/patch4/patch4_260.vtk"
+Time: 1.4
+    volScalarFields            : gradTy gradTx T gradTz
+
+    Internal  : "/home/boyao/C++/OpenFOAMObject/meshParticle/flange/VTK/flange_280.vtk"
+    Patch     : "/home/boyao/C++/OpenFOAMObject/meshParticle/flange/VTK/patch1/patch1_280.vtk"
+    Patch     : "/home/boyao/C++/OpenFOAMObject/meshParticle/flange/VTK/patch2/patch2_280.vtk"
+    Patch     : "/home/boyao/C++/OpenFOAMObject/meshParticle/flange/VTK/patch3/patch3_280.vtk"
+    Patch     : "/home/boyao/C++/OpenFOAMObject/meshParticle/flange/VTK/patch4/patch4_280.vtk"
+    FaceZone  : "/home/boyao/C++/OpenFOAMObject/meshParticle/flange/VTK/patch1/patch1_280.vtk"
+    FaceZone  : "/home/boyao/C++/OpenFOAMObject/meshParticle/flange/VTK/patch2/patch2_280.vtk"
+    FaceZone  : "/home/boyao/C++/OpenFOAMObject/meshParticle/flange/VTK/patch3/patch3_280.vtk"
+    FaceZone  : "/home/boyao/C++/OpenFOAMObject/meshParticle/flange/VTK/patch4/patch4_280.vtk"
+Time: 1.5
+    volScalarFields            : gradTy gradTx T gradTz
+
+    Internal  : "/home/boyao/C++/OpenFOAMObject/meshParticle/flange/VTK/flange_300.vtk"
+    Patch     : "/home/boyao/C++/OpenFOAMObject/meshParticle/flange/VTK/patch1/patch1_300.vtk"
+    Patch     : "/home/boyao/C++/OpenFOAMObject/meshParticle/flange/VTK/patch2/patch2_300.vtk"
+    Patch     : "/home/boyao/C++/OpenFOAMObject/meshParticle/flange/VTK/patch3/patch3_300.vtk"
+    Patch     : "/home/boyao/C++/OpenFOAMObject/meshParticle/flange/VTK/patch4/patch4_300.vtk"
+    FaceZone  : "/home/boyao/C++/OpenFOAMObject/meshParticle/flange/VTK/patch1/patch1_300.vtk"
+    FaceZone  : "/home/boyao/C++/OpenFOAMObject/meshParticle/flange/VTK/patch2/patch2_300.vtk"
+    FaceZone  : "/home/boyao/C++/OpenFOAMObject/meshParticle/flange/VTK/patch3/patch3_300.vtk"
+    FaceZone  : "/home/boyao/C++/OpenFOAMObject/meshParticle/flange/VTK/patch4/patch4_300.vtk"
+Time: 1.6
+    volScalarFields            : gradTy gradTx T gradTz
+
+    Internal  : "/home/boyao/C++/OpenFOAMObject/meshParticle/flange/VTK/flange_320.vtk"
+    Patch     : "/home/boyao/C++/OpenFOAMObject/meshParticle/flange/VTK/patch1/patch1_320.vtk"
+    Patch     : "/home/boyao/C++/OpenFOAMObject/meshParticle/flange/VTK/patch2/patch2_320.vtk"
+    Patch     : "/home/boyao/C++/OpenFOAMObject/meshParticle/flange/VTK/patch3/patch3_320.vtk"
+    Patch     : "/home/boyao/C++/OpenFOAMObject/meshParticle/flange/VTK/patch4/patch4_320.vtk"
+    FaceZone  : "/home/boyao/C++/OpenFOAMObject/meshParticle/flange/VTK/patch1/patch1_320.vtk"
+    FaceZone  : "/home/boyao/C++/OpenFOAMObject/meshParticle/flange/VTK/patch2/patch2_320.vtk"
+    FaceZone  : "/home/boyao/C++/OpenFOAMObject/meshParticle/flange/VTK/patch3/patch3_320.vtk"
+    FaceZone  : "/home/boyao/C++/OpenFOAMObject/meshParticle/flange/VTK/patch4/patch4_320.vtk"
+Time: 1.7
+    volScalarFields            : gradTy gradTx T gradTz
+
+    Internal  : "/home/boyao/C++/OpenFOAMObject/meshParticle/flange/VTK/flange_340.vtk"
+    Patch     : "/home/boyao/C++/OpenFOAMObject/meshParticle/flange/VTK/patch1/patch1_340.vtk"
+    Patch     : "/home/boyao/C++/OpenFOAMObject/meshParticle/flange/VTK/patch2/patch2_340.vtk"
+    Patch     : "/home/boyao/C++/OpenFOAMObject/meshParticle/flange/VTK/patch3/patch3_340.vtk"
+    Patch     : "/home/boyao/C++/OpenFOAMObject/meshParticle/flange/VTK/patch4/patch4_340.vtk"
+    FaceZone  : "/home/boyao/C++/OpenFOAMObject/meshParticle/flange/VTK/patch1/patch1_340.vtk"
+    FaceZone  : "/home/boyao/C++/OpenFOAMObject/meshParticle/flange/VTK/patch2/patch2_340.vtk"
+    FaceZone  : "/home/boyao/C++/OpenFOAMObject/meshParticle/flange/VTK/patch3/patch3_340.vtk"
+    FaceZone  : "/home/boyao/C++/OpenFOAMObject/meshParticle/flange/VTK/patch4/patch4_340.vtk"
+Time: 1.8
+    volScalarFields            : gradTy gradTx T gradTz
+
+    Internal  : "/home/boyao/C++/OpenFOAMObject/meshParticle/flange/VTK/flange_360.vtk"
+    Patch     : "/home/boyao/C++/OpenFOAMObject/meshParticle/flange/VTK/patch1/patch1_360.vtk"
+    Patch     : "/home/boyao/C++/OpenFOAMObject/meshParticle/flange/VTK/patch2/patch2_360.vtk"
+    Patch     : "/home/boyao/C++/OpenFOAMObject/meshParticle/flange/VTK/patch3/patch3_360.vtk"
+    Patch     : "/home/boyao/C++/OpenFOAMObject/meshParticle/flange/VTK/patch4/patch4_360.vtk"
+    FaceZone  : "/home/boyao/C++/OpenFOAMObject/meshParticle/flange/VTK/patch1/patch1_360.vtk"
+    FaceZone  : "/home/boyao/C++/OpenFOAMObject/meshParticle/flange/VTK/patch2/patch2_360.vtk"
+    FaceZone  : "/home/boyao/C++/OpenFOAMObject/meshParticle/flange/VTK/patch3/patch3_360.vtk"
+    FaceZone  : "/home/boyao/C++/OpenFOAMObject/meshParticle/flange/VTK/patch4/patch4_360.vtk"
+Time: 1.9
+    volScalarFields            : gradTy gradTx T gradTz
+
+    Internal  : "/home/boyao/C++/OpenFOAMObject/meshParticle/flange/VTK/flange_380.vtk"
+    Patch     : "/home/boyao/C++/OpenFOAMObject/meshParticle/flange/VTK/patch1/patch1_380.vtk"
+    Patch     : "/home/boyao/C++/OpenFOAMObject/meshParticle/flange/VTK/patch2/patch2_380.vtk"
+    Patch     : "/home/boyao/C++/OpenFOAMObject/meshParticle/flange/VTK/patch3/patch3_380.vtk"
+    Patch     : "/home/boyao/C++/OpenFOAMObject/meshParticle/flange/VTK/patch4/patch4_380.vtk"
+    FaceZone  : "/home/boyao/C++/OpenFOAMObject/meshParticle/flange/VTK/patch1/patch1_380.vtk"
+    FaceZone  : "/home/boyao/C++/OpenFOAMObject/meshParticle/flange/VTK/patch2/patch2_380.vtk"
+    FaceZone  : "/home/boyao/C++/OpenFOAMObject/meshParticle/flange/VTK/patch3/patch3_380.vtk"
+    FaceZone  : "/home/boyao/C++/OpenFOAMObject/meshParticle/flange/VTK/patch4/patch4_380.vtk"
+Time: 2
+    volScalarFields            : gradTy gradTx T gradTz
+
+    Internal  : "/home/boyao/C++/OpenFOAMObject/meshParticle/flange/VTK/flange_400.vtk"
+    Patch     : "/home/boyao/C++/OpenFOAMObject/meshParticle/flange/VTK/patch1/patch1_400.vtk"
+    Patch     : "/home/boyao/C++/OpenFOAMObject/meshParticle/flange/VTK/patch2/patch2_400.vtk"
+    Patch     : "/home/boyao/C++/OpenFOAMObject/meshParticle/flange/VTK/patch3/patch3_400.vtk"
+    Patch     : "/home/boyao/C++/OpenFOAMObject/meshParticle/flange/VTK/patch4/patch4_400.vtk"
+    FaceZone  : "/home/boyao/C++/OpenFOAMObject/meshParticle/flange/VTK/patch1/patch1_400.vtk"
+    FaceZone  : "/home/boyao/C++/OpenFOAMObject/meshParticle/flange/VTK/patch2/patch2_400.vtk"
+    FaceZone  : "/home/boyao/C++/OpenFOAMObject/meshParticle/flange/VTK/patch3/patch3_400.vtk"
+    FaceZone  : "/home/boyao/C++/OpenFOAMObject/meshParticle/flange/VTK/patch4/patch4_400.vtk"
+Time: 2.1
+    volScalarFields            : gradTy gradTx T gradTz
+
+    Internal  : "/home/boyao/C++/OpenFOAMObject/meshParticle/flange/VTK/flange_420.vtk"
+    Patch     : "/home/boyao/C++/OpenFOAMObject/meshParticle/flange/VTK/patch1/patch1_420.vtk"
+    Patch     : "/home/boyao/C++/OpenFOAMObject/meshParticle/flange/VTK/patch2/patch2_420.vtk"
+    Patch     : "/home/boyao/C++/OpenFOAMObject/meshParticle/flange/VTK/patch3/patch3_420.vtk"
+    Patch     : "/home/boyao/C++/OpenFOAMObject/meshParticle/flange/VTK/patch4/patch4_420.vtk"
+    FaceZone  : "/home/boyao/C++/OpenFOAMObject/meshParticle/flange/VTK/patch1/patch1_420.vtk"
+    FaceZone  : "/home/boyao/C++/OpenFOAMObject/meshParticle/flange/VTK/patch2/patch2_420.vtk"
+    FaceZone  : "/home/boyao/C++/OpenFOAMObject/meshParticle/flange/VTK/patch3/patch3_420.vtk"
+    FaceZone  : "/home/boyao/C++/OpenFOAMObject/meshParticle/flange/VTK/patch4/patch4_420.vtk"
+Time: 2.2
+    volScalarFields            : gradTy gradTx T gradTz
+
+    Internal  : "/home/boyao/C++/OpenFOAMObject/meshParticle/flange/VTK/flange_440.vtk"
+    Patch     : "/home/boyao/C++/OpenFOAMObject/meshParticle/flange/VTK/patch1/patch1_440.vtk"
+    Patch     : "/home/boyao/C++/OpenFOAMObject/meshParticle/flange/VTK/patch2/patch2_440.vtk"
+    Patch     : "/home/boyao/C++/OpenFOAMObject/meshParticle/flange/VTK/patch3/patch3_440.vtk"
+    Patch     : "/home/boyao/C++/OpenFOAMObject/meshParticle/flange/VTK/patch4/patch4_440.vtk"
+    FaceZone  : "/home/boyao/C++/OpenFOAMObject/meshParticle/flange/VTK/patch1/patch1_440.vtk"
+    FaceZone  : "/home/boyao/C++/OpenFOAMObject/meshParticle/flange/VTK/patch2/patch2_440.vtk"
+    FaceZone  : "/home/boyao/C++/OpenFOAMObject/meshParticle/flange/VTK/patch3/patch3_440.vtk"
+    FaceZone  : "/home/boyao/C++/OpenFOAMObject/meshParticle/flange/VTK/patch4/patch4_440.vtk"
+Time: 2.3
+    volScalarFields            : gradTy gradTx T gradTz
+
+    Internal  : "/home/boyao/C++/OpenFOAMObject/meshParticle/flange/VTK/flange_460.vtk"
+    Patch     : "/home/boyao/C++/OpenFOAMObject/meshParticle/flange/VTK/patch1/patch1_460.vtk"
+    Patch     : "/home/boyao/C++/OpenFOAMObject/meshParticle/flange/VTK/patch2/patch2_460.vtk"
+    Patch     : "/home/boyao/C++/OpenFOAMObject/meshParticle/flange/VTK/patch3/patch3_460.vtk"
+    Patch     : "/home/boyao/C++/OpenFOAMObject/meshParticle/flange/VTK/patch4/patch4_460.vtk"
+    FaceZone  : "/home/boyao/C++/OpenFOAMObject/meshParticle/flange/VTK/patch1/patch1_460.vtk"
+    FaceZone  : "/home/boyao/C++/OpenFOAMObject/meshParticle/flange/VTK/patch2/patch2_460.vtk"
+    FaceZone  : "/home/boyao/C++/OpenFOAMObject/meshParticle/flange/VTK/patch3/patch3_460.vtk"
+    FaceZone  : "/home/boyao/C++/OpenFOAMObject/meshParticle/flange/VTK/patch4/patch4_460.vtk"
+Time: 2.4
+    volScalarFields            : gradTy gradTx T gradTz
+
+    Internal  : "/home/boyao/C++/OpenFOAMObject/meshParticle/flange/VTK/flange_480.vtk"
+    Patch     : "/home/boyao/C++/OpenFOAMObject/meshParticle/flange/VTK/patch1/patch1_480.vtk"
+    Patch     : "/home/boyao/C++/OpenFOAMObject/meshParticle/flange/VTK/patch2/patch2_480.vtk"
+    Patch     : "/home/boyao/C++/OpenFOAMObject/meshParticle/flange/VTK/patch3/patch3_480.vtk"
+    Patch     : "/home/boyao/C++/OpenFOAMObject/meshParticle/flange/VTK/patch4/patch4_480.vtk"
+    FaceZone  : "/home/boyao/C++/OpenFOAMObject/meshParticle/flange/VTK/patch1/patch1_480.vtk"
+    FaceZone  : "/home/boyao/C++/OpenFOAMObject/meshParticle/flange/VTK/patch2/patch2_480.vtk"
+    FaceZone  : "/home/boyao/C++/OpenFOAMObject/meshParticle/flange/VTK/patch3/patch3_480.vtk"
+    FaceZone  : "/home/boyao/C++/OpenFOAMObject/meshParticle/flange/VTK/patch4/patch4_480.vtk"
+Time: 2.5
+    volScalarFields            : gradTy gradTx T gradTz
+
+    Internal  : "/home/boyao/C++/OpenFOAMObject/meshParticle/flange/VTK/flange_500.vtk"
+    Patch     : "/home/boyao/C++/OpenFOAMObject/meshParticle/flange/VTK/patch1/patch1_500.vtk"
+    Patch     : "/home/boyao/C++/OpenFOAMObject/meshParticle/flange/VTK/patch2/patch2_500.vtk"
+    Patch     : "/home/boyao/C++/OpenFOAMObject/meshParticle/flange/VTK/patch3/patch3_500.vtk"
+    Patch     : "/home/boyao/C++/OpenFOAMObject/meshParticle/flange/VTK/patch4/patch4_500.vtk"
+    FaceZone  : "/home/boyao/C++/OpenFOAMObject/meshParticle/flange/VTK/patch1/patch1_500.vtk"
+    FaceZone  : "/home/boyao/C++/OpenFOAMObject/meshParticle/flange/VTK/patch2/patch2_500.vtk"
+    FaceZone  : "/home/boyao/C++/OpenFOAMObject/meshParticle/flange/VTK/patch3/patch3_500.vtk"
+    FaceZone  : "/home/boyao/C++/OpenFOAMObject/meshParticle/flange/VTK/patch4/patch4_500.vtk"
+Time: 2.6
+    volScalarFields            : gradTy gradTx T gradTz
+
+    Internal  : "/home/boyao/C++/OpenFOAMObject/meshParticle/flange/VTK/flange_520.vtk"
+    Patch     : "/home/boyao/C++/OpenFOAMObject/meshParticle/flange/VTK/patch1/patch1_520.vtk"
+    Patch     : "/home/boyao/C++/OpenFOAMObject/meshParticle/flange/VTK/patch2/patch2_520.vtk"
+    Patch     : "/home/boyao/C++/OpenFOAMObject/meshParticle/flange/VTK/patch3/patch3_520.vtk"
+    Patch     : "/home/boyao/C++/OpenFOAMObject/meshParticle/flange/VTK/patch4/patch4_520.vtk"
+    FaceZone  : "/home/boyao/C++/OpenFOAMObject/meshParticle/flange/VTK/patch1/patch1_520.vtk"
+    FaceZone  : "/home/boyao/C++/OpenFOAMObject/meshParticle/flange/VTK/patch2/patch2_520.vtk"
+    FaceZone  : "/home/boyao/C++/OpenFOAMObject/meshParticle/flange/VTK/patch3/patch3_520.vtk"
+    FaceZone  : "/home/boyao/C++/OpenFOAMObject/meshParticle/flange/VTK/patch4/patch4_520.vtk"
+Time: 2.7
+    volScalarFields            : gradTy gradTx T gradTz
+
+    Internal  : "/home/boyao/C++/OpenFOAMObject/meshParticle/flange/VTK/flange_540.vtk"
+    Patch     : "/home/boyao/C++/OpenFOAMObject/meshParticle/flange/VTK/patch1/patch1_540.vtk"
+    Patch     : "/home/boyao/C++/OpenFOAMObject/meshParticle/flange/VTK/patch2/patch2_540.vtk"
+    Patch     : "/home/boyao/C++/OpenFOAMObject/meshParticle/flange/VTK/patch3/patch3_540.vtk"
+    Patch     : "/home/boyao/C++/OpenFOAMObject/meshParticle/flange/VTK/patch4/patch4_540.vtk"
+    FaceZone  : "/home/boyao/C++/OpenFOAMObject/meshParticle/flange/VTK/patch1/patch1_540.vtk"
+    FaceZone  : "/home/boyao/C++/OpenFOAMObject/meshParticle/flange/VTK/patch2/patch2_540.vtk"
+    FaceZone  : "/home/boyao/C++/OpenFOAMObject/meshParticle/flange/VTK/patch3/patch3_540.vtk"
+    FaceZone  : "/home/boyao/C++/OpenFOAMObject/meshParticle/flange/VTK/patch4/patch4_540.vtk"
+Time: 2.8
+    volScalarFields            : gradTy gradTx T gradTz
+
+    Internal  : "/home/boyao/C++/OpenFOAMObject/meshParticle/flange/VTK/flange_560.vtk"
+    Patch     : "/home/boyao/C++/OpenFOAMObject/meshParticle/flange/VTK/patch1/patch1_560.vtk"
+    Patch     : "/home/boyao/C++/OpenFOAMObject/meshParticle/flange/VTK/patch2/patch2_560.vtk"
+    Patch     : "/home/boyao/C++/OpenFOAMObject/meshParticle/flange/VTK/patch3/patch3_560.vtk"
+    Patch     : "/home/boyao/C++/OpenFOAMObject/meshParticle/flange/VTK/patch4/patch4_560.vtk"
+    FaceZone  : "/home/boyao/C++/OpenFOAMObject/meshParticle/flange/VTK/patch1/patch1_560.vtk"
+    FaceZone  : "/home/boyao/C++/OpenFOAMObject/meshParticle/flange/VTK/patch2/patch2_560.vtk"
+    FaceZone  : "/home/boyao/C++/OpenFOAMObject/meshParticle/flange/VTK/patch3/patch3_560.vtk"
+    FaceZone  : "/home/boyao/C++/OpenFOAMObject/meshParticle/flange/VTK/patch4/patch4_560.vtk"
+Time: 2.9
+    volScalarFields            : gradTy gradTx T gradTz
+
+    Internal  : "/home/boyao/C++/OpenFOAMObject/meshParticle/flange/VTK/flange_580.vtk"
+    Patch     : "/home/boyao/C++/OpenFOAMObject/meshParticle/flange/VTK/patch1/patch1_580.vtk"
+    Patch     : "/home/boyao/C++/OpenFOAMObject/meshParticle/flange/VTK/patch2/patch2_580.vtk"
+    Patch     : "/home/boyao/C++/OpenFOAMObject/meshParticle/flange/VTK/patch3/patch3_580.vtk"
+    Patch     : "/home/boyao/C++/OpenFOAMObject/meshParticle/flange/VTK/patch4/patch4_580.vtk"
+    FaceZone  : "/home/boyao/C++/OpenFOAMObject/meshParticle/flange/VTK/patch1/patch1_580.vtk"
+    FaceZone  : "/home/boyao/C++/OpenFOAMObject/meshParticle/flange/VTK/patch2/patch2_580.vtk"
+    FaceZone  : "/home/boyao/C++/OpenFOAMObject/meshParticle/flange/VTK/patch3/patch3_580.vtk"
+    FaceZone  : "/home/boyao/C++/OpenFOAMObject/meshParticle/flange/VTK/patch4/patch4_580.vtk"
+Time: 3
+    volScalarFields            : gradTy gradTx T gradTz
+
+    Internal  : "/home/boyao/C++/OpenFOAMObject/meshParticle/flange/VTK/flange_600.vtk"
+    Patch     : "/home/boyao/C++/OpenFOAMObject/meshParticle/flange/VTK/patch1/patch1_600.vtk"
+    Patch     : "/home/boyao/C++/OpenFOAMObject/meshParticle/flange/VTK/patch2/patch2_600.vtk"
+    Patch     : "/home/boyao/C++/OpenFOAMObject/meshParticle/flange/VTK/patch3/patch3_600.vtk"
+    Patch     : "/home/boyao/C++/OpenFOAMObject/meshParticle/flange/VTK/patch4/patch4_600.vtk"
+    FaceZone  : "/home/boyao/C++/OpenFOAMObject/meshParticle/flange/VTK/patch1/patch1_600.vtk"
+    FaceZone  : "/home/boyao/C++/OpenFOAMObject/meshParticle/flange/VTK/patch2/patch2_600.vtk"
+    FaceZone  : "/home/boyao/C++/OpenFOAMObject/meshParticle/flange/VTK/patch3/patch3_600.vtk"
+    FaceZone  : "/home/boyao/C++/OpenFOAMObject/meshParticle/flange/VTK/patch4/patch4_600.vtk"
+End
+

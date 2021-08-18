@@ -1,0 +1,6 @@
+/* dynamicCode:
+ * SHA1 = 3923d4a32dfa277b980352d876236decbb50d3e8
+ */
+fixedValueFvPatchFieldTemplate.C
+
+LIB = $(PWD)/../platforms/$(WM_OPTIONS)/lib/libheating_3923d4a32dfa277b980352d876236decbb50d3e8

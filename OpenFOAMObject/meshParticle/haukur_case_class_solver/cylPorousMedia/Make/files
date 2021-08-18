@@ -1,0 +1,4 @@
+cylPorousZone.C
+cylPorousZones.C
+
+LIB = $(FOAM_USER_LIBBIN)/libcylPorousMedia
