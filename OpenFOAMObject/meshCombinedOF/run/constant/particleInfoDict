@@ -15,23 +15,44 @@ FoamFile
 }
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 
+meshInput
+{
+  VERBOSITY 1;
+  SAVE_EVERY 1000;
+  TIME_DT 1.0e-04;
+  TIME_TOTAL 100;
+  MOISTURE_FRACTION_DB 0.666667;
+  PARTICLE_RADIUS 4.75e-03;
+  DRYING_SHRINKAGE_VOLUME 0.127;
+  T_REACTOR 1050.0;
+  T_RADIATION 1276.0;
+  MASS_FRAC_O2 0.23;
+  DENSITY_INITIAL 844.0;
+  FINE_PARTICLE_MESH 50;
+  FINE_PARTICLE_MESH_DOUBLE 50.0;
+  K_P_WET 1;
+  K_P_DRY 1;
+  K_P_CHAR 1;
+}
 
-VERBOSITY 1;
-SAVE_EVERY 1000;
-TIME_DT 1.0e-04;
-TIME_TOTAL 100;
-MOISTURE_FRACTION_DB 0.666667;
-PARTICLE_RADIUS 4.75e-03;
-DRYING_SHRINKAGE_VOLUME 0.127;
-T_REACTOR 1050.0;
-T_RADIATION 1276.0;
-MASS_FRAC_O2 0.23;
-DENSITY_INITIAL 844.0;
-FINE_PARTICLE_MESH 50;
-FINE_PARTICLE_MESH_DOUBLE 50.0;
-K_P_WET 1;
-K_P_DRY 1;
-K_P_CHAR 1;
-
+// single component kinetic ratio
+// Wagenaar 1994 //devolatilization kinetic
+//1:wood to gas, 2:wood to tar, 3:wood to char
+// H. Strom H. Thunman 2013
+//  DevKinA1 1.30e+08 /* (s-1) */
+//  DevKinE1 1.40e+05 /* (J/mol) */
+//  DevKinA2 2.00e+08 /* (s-1) */
+//  DevKinE2 1.33e+05 /* (J/mol) */
+//  DevKinA3 1.08e+07 /* (s-1) */
+//  DevKinE3 1.21e+05 /* (J/mol) */
+sigDevKin
+{
+  DevKinA1 1.10e+11; /* (s-1) */
+  DevKinE1 1.77e+05; /* (J/mol) */
+  DevKinA2 9.28e+09; /* (s-1) */
+  DevKinE2 1.49e+05; /* (J/mol) */
+  DevKinA3 3.05e+07; /* (s-1) */
+  DevKinE3 1.25e+05; /* (J/mol) */
+}
 
 // ************************************************************************* //
