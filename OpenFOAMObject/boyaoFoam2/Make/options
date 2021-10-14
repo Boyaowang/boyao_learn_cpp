@@ -1,0 +1,9 @@
+EXE_INC = \
+    -I../boyaoClass3/lnInclude \
+    -I../boyaoAddRunTime/lnInclude
+
+
+EXE_LIBS = \
+    -L$(FOAM_USER_LIBBIN) \
+    -lboyaoClassFunctionObject3 \
+    -lboyaoAddRunTime

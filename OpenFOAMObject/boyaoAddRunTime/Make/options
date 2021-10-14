@@ -1,0 +1,7 @@
+EXE_INC = \
+    -I$(OBJECTS_DIR) \
+    -I../boyaoClass3
+
+LIB_LIBS = \
+    -L$(FOAM_USER_LIBBIN) \
+    -lboyaoClassFunctionObject3 \

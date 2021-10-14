@@ -1,0 +1,4 @@
+EXE_INC = \
+    -I$(OBJECTS_DIR)
+
+LIB_LIBS = 
